@@ -7,7 +7,8 @@
     <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type='text/css' rel="stylesheet"/>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type='text/css' rel="stylesheet"/> -->
+    <link href="CSS/BootstrapFlatly.css" type='text/css' rel="stylesheet"/>
     <link href="CSS/Sidebar.css" rel="stylesheet" />
     <link href="CSS/Navbar.css" rel="stylesheet" />
 </head>
