@@ -1,0 +1,19 @@
+﻿body {
+}
+
+.labelColor {
+    color: #06A974;
+}
+
+.brandImage {
+    width: 100%;
+}
+
+.productImage {
+    width: 60%;
+    height: 60%;
+}
+
+.AddToCart {
+    align-content: center;
+}
