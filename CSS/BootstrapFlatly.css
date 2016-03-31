@@ -7029,11 +7029,17 @@ a.list-group-item-danger.active:focus {
 **  Use to modify top nav bar or sidebar.
 */
 
+body {
+    background: #ecf0f1;
+}
+
 #page_content {
     color: #000000;
     background-color: #ecf0f1;
     padding: 0 !important;
     margin: 0 !important;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .sidebar-nav {
