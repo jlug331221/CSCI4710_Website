@@ -7026,17 +7026,31 @@ a.list-group-item-danger.active:focus {
 
 /*
 **  Beginning of Project CSS
-**  Use to modify top nav bar or sidebar.
+**  Use to modify top nav bar, sidebar, or page content.
 */
 
 .navbar {
     margin-bottom: 0 !important;
 }
 
+ul.shop_items li a {
+    color: #FFFFFF;
+    font-size: 125%;
+}
+
+ul.shop_items li a:hover {
+    color: #18bc9c;
+    text-decoration: none;
+}
+
 .sidebar-nav {
     background-color: #2c3e50;
     margin-bottom: -99999px;
     padding-bottom: 99999px;
+}
+
+.sidebar-nav ul li {
+    margin-bottom: 20px;
 }
 
 #main_content {
@@ -7052,4 +7066,16 @@ a.list-group-item-danger.active:focus {
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
+
+#sidebar_items {
+    padding: 1em;
+}
+
+#sidebar_title {
+    color: #FFFFFF;
+    margin-left: 20px;
+    font-size: 150%;
+}
+
 

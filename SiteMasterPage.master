@@ -53,12 +53,13 @@
             <div class="row">
                 <div class="col-xs-12 col-md-3">
                     <div class="sidebar-nav">
-                        <ul class="nav nav-list">
-                            <li><a href="#">Shop for Jeep Products</a></li>
+                        <ul class="nav nav-list" id="sidebar_items">
+                            <li id="sidebar_title">Shop for Jeep Products</li>
                             <asp:BulletedList ID="BulletedList1" runat="server" style="list-style-type:none"
                                 BulletStyle="Square" DataSourceID="SqlDataSource1"  
                                 DataTextField="shop_name" DataValueField="shop_id" 
-                                Font-Size="Small" ForeColor="White" DisplayMode="Hyperlink" >
+                                Font-Size="Small" ForeColor="White" DisplayMode="Hyperlink" 
+                                CssClass="shop_items">
                             </asp:BulletedList>
 
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
@@ -66,6 +67,7 @@
                                 SelectCommand="SELECT [shop_id], [shop_name] FROM [Shop]">
                             </asp:SqlDataSource>
                         </ul>
+                        
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-9" id="main_content">
