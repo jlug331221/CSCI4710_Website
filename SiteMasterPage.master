@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteMasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <title>Jeep Shop</title>
+
+    <link href="CSS/BootstrapFlatly.css" type="text/css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="CSS/flexboxgrid.css" type="text/css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-default no-margin">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-shopping-cart fa-lg"></i></a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <form id="form1" runat="server">
+        <div class="container-fluid" id="page_content">
+            <div class="row">
+                <div class="col-xs-12 col-md-3">
+                    <div class="sidebar-nav">
+                        <ul class="nav nav-list" id="sidebar_items">
+                            <li id="sidebar_title">Shop for Jeep* Products</li>
+                            <asp:BulletedList ID="BulletedList1" runat="server" Style="list-style-type: none"
+                                BulletStyle="Square" DataSourceID="SqlDataSource1"
+                                DataTextField="shop_name" DataValueField="shop_id"
+                                Font-Size="Small" ForeColor="White" DisplayMode="Hyperlink"
+                                CssClass="shop_items">
+                            </asp:BulletedList>
+
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+                                ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+                                SelectCommand="SELECT [shop_id], [shop_name] FROM [Shop]"></asp:SqlDataSource>
+                        </ul>
+
+                    </div>
+                </div>
+                
+                <div class="col-xs-12 col-md-9" id="main_content">
+                    <div id="business_logo">
+                        <img src="Images/Jeep%20Banner.jpg" class="img-responsive center-block" />
+                    </div>
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8" id="footer">
+                    <footer>
+                        <p class="pFooter">
+                            The following parts require additional handling charges due to their large size or weight: wheels, tires, 
+                full suspension lift kits, oversized bumpers, tire carriers, body tubs, hard tops and cargo racks. The 
+                following parts do not qualify for free shipping: Oversized items and items delivered by truck freight, 
+                as well as prior purchases and returns.
+                <br />
+                            <br />
+                            ©2016 <i><b>[INSERT NAME HERE]</b></i> This entire site with its content and parts is copyright protected.
+                <br />
+                            <br />
+                            *Jeep, Wrangler, Rubicon, Renegade, CJ and the Jeep Grille Design are registered trademarks of FCA 
+                (Fiat Chrysler Automobiles). <i><b>[INSERT NAME HERE]</b></i>, has no affiliation with FCA. Throughout this website 
+                and catalog the terms Jeep, Wrangler, MOPAR®, & Rubicon are used for identification purposes only. It is not implied 
+                that any part listed is a product of, or approved by Fiat Chrysler Automobiles.
+                <br />
+                            <br />
+                            ** To qualify for FREE shipping the parts on an individual order must meet a combined total value of $50 or more. 
+                Customer must select Standard Shipping in the checkout and ship to an address in the contiguous 48 United States. 
+                Some parts require additional handling charges due to their large size or weight: including wheels, tires, full 
+                suspension lift kits, oversized bumpers, tire carriers, body tubs, hard tops, cargo racks, winches and hitches. 
+                Oversized items, items that are delivered by truck freight, prior purchases and returns do not qualify for free shipping.
+                        </p>
+                    </footer>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- JQuery -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</body>
+</html>
