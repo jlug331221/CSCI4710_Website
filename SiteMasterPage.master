@@ -12,7 +12,7 @@
     <link href="CSS/BootstrapFlatly.css" type="text/css" rel="stylesheet"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="CSS/flexboxgrid.css" type="text/css" rel="stylesheet" />
-
+    <link href="CSS/SiteMasterPage.css" rel="stylesheet" />
 </head>
 <body>
     
@@ -54,7 +54,7 @@
                 <div class="col-xs-12 col-md-3">
                     <div class="sidebar-nav">
                         <ul class="nav nav-list" id="sidebar_items">
-                            <li id="sidebar_title">Shop for Jeep Products</li>
+                            <li id="sidebar_title">Shop for Jeep* Products</li>
                             <asp:BulletedList ID="BulletedList1" runat="server" style="list-style-type:none"
                                 BulletStyle="Square" DataSourceID="SqlDataSource1"  
                                 DataTextField="shop_name" DataValueField="shop_id" 
@@ -71,11 +71,45 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-9" id="main_content">
+                    <img src="Images/Jeep%20Banner.jpg" class="img-responsive center-block"/>
                     <div>
+
                         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
             
                         </asp:ContentPlaceHolder>
                     </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="container-fluid">
+                        <div class="row">
+                <div class="col-md-8" id="footer">
+                    <footer>
+<p class="pFooter">
+                The following parts require additional handling charges due to their large size or weight: wheels, tires, 
+                full suspension lift kits, oversized bumpers, tire carriers, body tubs, hard tops and cargo racks. The 
+                following parts do not qualify for free shipping: Oversized items and items delivered by truck freight, 
+                as well as prior purchases and returns.
+                <br />
+                <br />
+                ©2016 <i><b>[INSERT NAME HERE]</b></i> This entire site with its content and parts is copyright protected.
+                <br />
+                <br />
+                *Jeep, Wrangler, Rubicon, Renegade, CJ and the Jeep Grille Design are registered trademarks of FCA 
+                (Fiat Chrysler Automobiles). <i><b>[INSERT NAME HERE]</b></i>, has no affiliation with FCA. Throughout this website 
+                and catalog the terms Jeep, Wrangler, MOPAR®, & Rubicon are used for identification purposes only. It is not implied 
+                that any part listed is a product of, or approved by Fiat Chrysler Automobiles.
+                <br />
+                <br />
+                ** To qualify for FREE shipping the parts on an individual order must meet a combined total value of $50 or more. 
+                Customer must select Standard Shipping in the checkout and ship to an address in the contiguous 48 United States. 
+                Some parts require additional handling charges due to their large size or weight: including wheels, tires, full 
+                suspension lift kits, oversized bumpers, tire carriers, body tubs, hard tops, cargo racks, winches and hitches. 
+                Oversized items, items that are delivered by truck freight, prior purchases and returns do not qualify for free shipping.
+            </p>
+                    </footer>
+
                 </div>
             </div>
         </div>
