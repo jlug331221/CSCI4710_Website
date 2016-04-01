@@ -15,7 +15,7 @@
     </asp:ContentPlaceHolder>
 
 </head>
-<body>
+<body class="ifDesktop">
 
     <nav class="navbar navbar-default no-margin">
         <div class="container-fluid">
@@ -56,23 +56,26 @@
                     <div class="sidebar-nav">
                         <ul class="nav nav-list" id="sidebar_items">
                             <li id="sidebar_title">Shop for Jeep* Products</li>
-                            <asp:BulletedList ID="BulletedList1" runat="server" 
-                                Style="list-style-type: none"
-                                BulletStyle="Square" DataSourceID="SqlDataSource1"
-                                DataTextField="shop_name" DataValueField="shop_id"
-                                Font-Size="Small" ForeColor="White" DisplayMode="Hyperlink"
-                                CssClass="shop_items" AppendDataBoundItems="False">
-                            </asp:BulletedList>
+                            <asp:DataList ID="DataList1" runat="server" DataKeyField="shop_id" DataSourceID="SqlDataSource1" Font-Bold="False" 
+                                Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="White" RepeatLayout="Flow" ShowFooter="False" ShowHeader="False">
+                                <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
+                                <ItemTemplate>
+                                    <asp:HyperLink ID="sideHyperLink" runat="server" NavigateUrl=' <%# "Category.aspx?shop_id=" + Eval("shop_id") %>' 
+                                        Text='<%# Eval("shop_name") %>' CssClass="sideLink"></asp:HyperLink>
+                                    <br />
+                                </ItemTemplate>
+                                <SelectedItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
+                                <SeparatorStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
+                            </asp:DataList>
 
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server"
                                 ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-                                SelectCommand="SELECT [shop_id], [shop_name] FROM [Shop]">
-                            </asp:SqlDataSource>
+                                SelectCommand="SELECT [shop_id], [shop_name] FROM [Shop]"></asp:SqlDataSource>
                         </ul>
 
                     </div>
                 </div>
-                
+
                 <div class="col-xs-12 col-md-9" id="main_content">
                     <div id="business_logo">
                         <img src="Images/Jeep%20Banner.jpg" class="img-responsive center-block" />
