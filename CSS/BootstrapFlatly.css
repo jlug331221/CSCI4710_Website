@@ -7033,14 +7033,8 @@ a.list-group-item-danger.active:focus {
     margin-bottom: 0 !important;
 }
 
-ul.shop_items li a {
-    color: #FFFFFF;
-    font-size: 125%;
-}
-
-ul.shop_items li a:hover {
-    color: #18bc9c;
-    text-decoration: none;
+.pFooter{
+    font-size: x-small;
 }
 
 .sidebar-nav {
@@ -7051,6 +7045,28 @@ ul.shop_items li a:hover {
 
 .sidebar-nav ul li {
     margin-bottom: 20px;
+}
+
+ul.shop_items li a {
+    color: #FFFFFF;
+    font-size: 125%;
+}
+
+ul.shop_items li a:hover {
+    color: #18bc9c;
+    text-decoration: none;
+}
+
+#business_logo {
+    margin-bottom: 1em;
+}
+
+#footer{
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #main_content {
@@ -7067,7 +7083,6 @@ ul.shop_items li a:hover {
     overflow-y: hidden;
 }
 
-
 #sidebar_items {
     padding: 1em;
 }
@@ -7077,5 +7092,3 @@ ul.shop_items li a:hover {
     margin-left: 20px;
     font-size: 150%;
 }
-
-
