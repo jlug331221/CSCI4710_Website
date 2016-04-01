@@ -33,7 +33,7 @@
             </div>
             <div class="col-md-5">
                 <div>
-                    <asp:Image ID="imgBrand" runat="server" ImageUrl="~/Images/Brands/Alpine_Logo.jpg" CssClass="brandImage" BorderStyle="Solid" BorderColor="Black" />
+                    <asp:Image ID="imgBrand" runat="server" ImageUrl="~/Images/Brands/Alpine_Logo.jpg" CssClass="brandImage img-responsive center-block" BorderStyle="Solid" BorderColor="Black" />
                 </div>
                 <div>
                     <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btn btn-info AddToCart center-block" />
