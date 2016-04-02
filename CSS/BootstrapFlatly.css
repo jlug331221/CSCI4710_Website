@@ -7032,7 +7032,7 @@ a.list-group-item-danger.active:focus {
 
 a:hover{
     text-decoration: none;
-    color: #ffffff;
+    color: #18bc9c;
 }
 
 .navbar {
@@ -7053,17 +7053,7 @@ a:hover{
     margin-bottom: 20px;
 }
 
-ul.shop_items li a {
-    color: #FFFFFF;
-    font-size: 125%;
-}
-
-ul.shop_items li a:hover {
-    color: #18bc9c;
-    text-decoration: none;
-}
-
-.sideLink{
+.sideLink {
     color: #ffffff;
     margin-left: 20px;
     text-decoration: none;
@@ -7071,10 +7061,10 @@ ul.shop_items li a:hover {
 
 #business_logo {
     margin-bottom: 1em;
+    margin-right: 1em;
 }
 
-#footer{
-
+#footer {
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: auto;
@@ -7111,6 +7101,18 @@ ul.shop_items li a:hover {
         width: 1200px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+}
+
+@media screen and (max-width: 990px) {
+
+    #main_content {
+        color: #FFFFFF;
+    }
+
+    #business_logo {
+        margin-right: 0px;
     }
 
 }

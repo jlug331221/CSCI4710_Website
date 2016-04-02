@@ -72,7 +72,6 @@
                                 ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
                                 SelectCommand="SELECT [shop_id], [shop_name] FROM [Shop]"></asp:SqlDataSource>
                         </ul>
-
                     </div>
                 </div>
 
@@ -80,6 +79,7 @@
                     <div id="business_logo">
                         <img src="Images/Jeep%20Banner.jpg" class="img-responsive center-block" />
                     </div>
+
                     <div>
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         </asp:ContentPlaceHolder>
