@@ -4,7 +4,7 @@
     <link href="CSS/Default.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div class="container-fluid">
+    <div class="container-fluid"
         <div class="row">
             <div class="col-md-9">
                 <h1>Welcome</h1>
@@ -35,7 +35,7 @@
             on the site as well as special offers sent directly to you in your email.  
                 </p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3, hidden-sm">
                 <img src="Images/Brands/Alloy.jpg" class="imgAds"/>
                 <img src="Images/Brands/ARB.jpg" class="imgAds"/>
                 <img src="Images/Brands/bestop.jpg" class="imgAds"/>

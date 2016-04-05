@@ -7029,6 +7029,11 @@ a.list-group-item-danger.active:focus {
 **  Use to modify top nav bar, sidebar, or page content.
 */
 
+a:hover{
+    text-decoration: none;
+    color: #18bc9c;
+}
+
 .navbar {
     margin-bottom: 0 !important;
 }
@@ -7047,22 +7052,18 @@ a.list-group-item-danger.active:focus {
     margin-bottom: 20px;
 }
 
-ul.shop_items li a {
-    color: #FFFFFF;
-    font-size: 125%;
-}
-
-ul.shop_items li a:hover {
-    color: #18bc9c;
+.sideLink {
+    color: #ffffff;
+    margin-left: 20px;
     text-decoration: none;
 }
 
 #business_logo {
     margin-bottom: 1em;
+    margin-right: 1em;
 }
 
-#footer{
-
+#footer {
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: auto;
@@ -7091,4 +7092,26 @@ ul.shop_items li a:hover {
     color: #FFFFFF;
     margin-left: 20px;
     font-size: 150%;
+}
+
+@media (min-width:1200px) {
+
+    .ifDesktop{
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media screen and (max-width: 990px) {
+
+    #main_content {
+        color: #FFFFFF;
+    }
+
+    #business_logo {
+        margin-right: 0px;
+    }
+
 }

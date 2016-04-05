@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="CSS/Product.css" rel="stylesheet" />
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
    
      <div class="container-fluid">
@@ -46,7 +47,6 @@
         <SelectParameters>
             <asp:QueryStringParameter DefaultValue="11" Name="product_id" QueryStringField="ProductId" Type="Int32" />
         </SelectParameters>
-
     </asp:SqlDataSource>
 
 
