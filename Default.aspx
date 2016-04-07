@@ -34,14 +34,21 @@
                     Jeep Prime is our membership service that is reasonably priced at $49.99 a year.  With this subscrition you get access to special offers found directly
             on the site as well as special offers sent directly to you in your email.  
                 </p>
+                <div>
+                    <a class="twitter-timeline center-block" width="600" height="380" href="https://twitter.com/Jeep" data-widget-id="718098841803878400">Tweets by @Jeep</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </div>
             </div>
-            <div class="col-md-3, hidden-sm">
+            <div class="col-md-3 hidden-sm">
                 <img src="Images/Brands/Alloy.jpg" class="imgAds"/>
                 <img src="Images/Brands/ARB.jpg" class="imgAds"/>
                 <img src="Images/Brands/bestop.jpg" class="imgAds"/>
                 <img src="Images/Brands/bushwacker.jpg" class="imgAds"/>
                 <img src="Images/Brands/Corbeau.jpg" class="imgAds"/>
                 <img src="Images/Brands/Mopar.jpg" class="imgAds"/>
+                <img src="Images/Brands/rugged-ridge.png" class="imgAds"/>
+                <img src="Images/Brands/skyjacker.jpg" class="imgAds"/>
+                <img src="Images/Brands/tuffy.jpg" class="imgAds"/>
             </div>
         </div>
     </div>
