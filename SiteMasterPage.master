@@ -54,24 +54,45 @@
             <div class="row">
                 <div class="col-xs-12 col-md-3">
                     <div class="sidebar-nav">
-                        <ul class="nav nav-list" id="sidebar_items">
-                            <li id="sidebar_title">Shop for Jeep* Products</li>
-                            <asp:DataList ID="DataList1" runat="server" DataKeyField="shop_id" DataSourceID="SqlDataSource1" Font-Bold="False" 
-                                Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="White" RepeatLayout="Flow" ShowFooter="False" ShowHeader="False">
-                                <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
-                                <ItemTemplate>
-                                    <asp:HyperLink ID="sideHyperLink" runat="server" NavigateUrl=' <%# "Category.aspx?shop_id=" + Eval("shop_id") %>' 
-                                        Text='<%# Eval("shop_name") %>' CssClass="sideLink"></asp:HyperLink>
-                                    <br />
-                                </ItemTemplate>
-                                <SelectedItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
-                                <SeparatorStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
-                            </asp:DataList>
+                        <span id="sidebar_title"
+                            data-toggle="collapse"
+                            data-target="#collapse_sidebar_items">
+                            Shop for Jeep* Products
+                        </span>
+                        <div class="collapse navbar-collapse" id="collapse_sidebar_items">
+                            <ul class="nav nav-list" id="sidebar_items">
+                                <asp:DataList ID="DataList1" runat="server" DataKeyField="shop_id" 
+                                    DataSourceID="SqlDataSource1" Font-Bold="False" 
+                                    Font-Italic="False" Font-Overline="False" 
+                                    Font-Strikeout="False" Font-Underline="False" 
+                                    ForeColor="White" RepeatLayout="Flow" 
+                                    ShowFooter="False" ShowHeader="False">
+                                    <ItemStyle Font-Bold="False" Font-Italic="False" 
+                                        Font-Overline="False" Font-Strikeout="False" 
+                                        Font-Underline="False" />
+                                    <ItemTemplate>
+                                        <asp:HyperLink ID="sideHyperLink" runat="server" 
+                                            NavigateUrl=' <%# "Category.aspx?shop_id=" + Eval("shop_id") %>' 
+                                            Text='<%# Eval("shop_name") %>' 
+                                            CssClass="sideLink">
+                                        </asp:HyperLink>
+                                        <br />
+                                    </ItemTemplate>
+                                    <SelectedItemStyle Font-Bold="False" 
+                                        Font-Italic="False" Font-Overline="False" 
+                                        Font-Strikeout="False" Font-Underline="False" />
+                                    <SeparatorStyle Font-Bold="False" 
+                                        Font-Italic="False" Font-Overline="False" 
+                                        Font-Strikeout="False" 
+                                        Font-Underline="False" />
+                                </asp:DataList>
 
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server"
-                                ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-                                SelectCommand="SELECT [shop_id], [shop_name] FROM [Shop]"></asp:SqlDataSource>
-                        </ul>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+                                    ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+                                    SelectCommand="SELECT [shop_id], [shop_name] FROM [Shop]">
+                                </asp:SqlDataSource>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
