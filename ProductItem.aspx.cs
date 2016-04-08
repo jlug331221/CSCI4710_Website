@@ -3,20 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Data;
 using System.Web.UI.WebControls;
+using System.Data;
 
-public partial class Product : System.Web.UI.Page
+public partial class ProductItem : System.Web.UI.Page
 {
-    public int ProductID { get; set; }
-    public string ProductName { get; set; }
-    public string Description { get; set; }
-    public decimal UnitPrice { get; set; }
-    public double Weight { get; set; }
-    public string ImageFile { get; set; }
-    public int BrandID { get; set; }
-    public int ProductOnHand { get; set; }
-
     protected void Page_Load(object sender, EventArgs e)
     {
         Product p = getProduct();
@@ -41,7 +32,7 @@ public partial class Product : System.Web.UI.Page
         p.ImageFile = row["image"].ToString();
         p.BrandID = Convert.ToInt32(row["brand_id"]);
         p.ProductOnHand = Convert.ToInt32(row["prod_on_hand"]);
- 
+
         return p;
     }
 }

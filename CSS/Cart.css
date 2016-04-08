@@ -1,2 +1,18 @@
-﻿body {
+﻿.continue_shopping_btn {
+    margin-right: 10px;
+}
+
+.empty_cart_btn {
+    margin-top: 20px;
+}
+
+.lstItemsCart {
+    width: 100%;
+    height: auto;
+    background-color: #95a5a6;
+    color: white;
+    border: 2px solid black;
+    font-size: large;
+    text-indent: 5px;
+    padding-bottom: 1em;
 }
