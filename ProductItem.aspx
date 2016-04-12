@@ -43,9 +43,9 @@
             </div>
         </div>
     </div>
-    <asp:SqlDataSource ID="ProductDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [product_id], [product_name], [price], [prod_on_hand], [weight], [brand_id], [description], [image] FROM [Product] WHERE ([product_id] = @product_id)">
+    <asp:SqlDataSource ID="ProductDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [product_id], [product_name], [price], [prod_on_hand], [weight], [brand_image], [description], [image] FROM [Product] INNER JOIN [Brand] ON (Product.brand_id = Brand.brand_id) WHERE ([product_id] = @product_id)">
         <SelectParameters>
-            <asp:QueryStringParameter DefaultValue="11" Name="product_id" QueryStringField="ProductId" Type="Int32" />
+            <asp:QueryStringParameter Name="product_id" QueryStringField="product_id" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
 

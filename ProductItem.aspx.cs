@@ -16,6 +16,7 @@ public partial class ProductItem : System.Web.UI.Page
         lblDescription.Text = p.Description.ToString();
         lblWeight.Text = p.Weight.ToString();
         imgProduct.ImageUrl = "Images/Products/" + p.ImageFile;
+        imgBrand.ImageUrl = "Images/Brands/" + p.BrandImage;
     }
 
     public Product getProduct()
@@ -30,7 +31,7 @@ public partial class ProductItem : System.Web.UI.Page
         p.UnitPrice = (decimal)row["price"];
         p.Weight = Convert.ToDouble(row["weight"]);
         p.ImageFile = row["image"].ToString();
-        p.BrandID = Convert.ToInt32(row["brand_id"]);
+        p.BrandImage = row["brand_image"].ToString();
         p.ProductOnHand = Convert.ToInt32(row["prod_on_hand"]);
 
         return p;

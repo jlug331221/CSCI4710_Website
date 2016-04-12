@@ -14,6 +14,6 @@ public class Product
     public decimal UnitPrice { get; set; }
     public double Weight { get; set; }
     public string ImageFile { get; set; }
-    public int BrandID { get; set; }
+    public string BrandImage { get; set; }
     public int ProductOnHand { get; set; }
 }
