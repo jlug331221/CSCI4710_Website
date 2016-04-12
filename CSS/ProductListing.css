@@ -1,0 +1,20 @@
+﻿.listingLabel {
+    font-size:large;
+}
+
+.productListingLink {
+    font-size: large;
+}
+
+.productListingImage {
+    width:200px;
+    height:125px;
+    border: solid;
+    border-color:aliceblue;
+    border-width: 2px;
+    margin-bottom: 30px;
+}
+
+.productListingPrice {
+    padding-left:40px;
+}

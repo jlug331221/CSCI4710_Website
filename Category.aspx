@@ -15,7 +15,9 @@
                     </SelectParameters>
                 </asp:SqlDataSource>
 
-                <asp:Label ID="lblShopName" runat="server" Text="Shop Name"></asp:Label>
+                <asp:Label ID="lblShopName" runat="server" Text="Shop Name" CssClass="shopLabel"></asp:Label>
+                <br />
+                <br />
 
                 <asp:SqlDataSource ID="CategoryDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [category_id], [category_name], [shop_id] FROM [Category] WHERE ([shop_id] = @shop_id)">
                     <SelectParameters>
@@ -27,9 +29,9 @@
                          <asp:HyperLink ID="sideHyperLink" runat="server" NavigateUrl=' <%# "ProductListing.aspx?category_id=" 
                                  + Eval("category_id")%>' Text='<%# Eval("category_name") %>'></asp:HyperLink>
                          <br />
+                         <br />
                     </ItemTemplate>
                 </asp:DataList>
-   
             </div>
         </div>
     </div>

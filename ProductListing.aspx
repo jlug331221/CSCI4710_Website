@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMasterPage.master" AutoEventWireup="true" CodeFile="ProductListing.aspx.cs" Inherits="ProductListing" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link href="CSS/ProductListing.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -14,8 +15,10 @@
                     </SelectParameters>
                 </asp:SqlDataSource>
 
-                <asp:Label ID="lblShopName" runat="server" Text="Label"></asp:Label>
-                <asp:Label ID="lblCategoryName" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblShopName" runat="server" Text="Label" CssClass="listingLabel"></asp:Label> > 
+                <asp:Label ID="lblCategoryName" runat="server" Text="Label" CssClass="listingLabel"></asp:Label>
+                <br />
+                <br />
 
                 <asp:SqlDataSource ID="CategoryNameDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [product_id], [product_name], [image], [price] FROM [Product] WHERE ([category_id] = @category_id)">
                     <SelectParameters>
@@ -25,12 +28,13 @@
 
                 <asp:DataList ID="ProductsDataList" runat="server" DataKeyField="product_id" DataSourceID="CategoryNameDataSource">
                     <ItemTemplate>
-                        &nbsp;<asp:Label ID="product_nameLabel" runat="server" Text='<%# Eval("product_name") %>' />
+                        <asp:HyperLink ID="productHyperLink" runat="server" CssClass="productListingLink" NavigateUrl=' <%# "ProductItem.aspx?product_id=" 
+                                 + Eval("product_id")%>' Text='<%# Eval("product_name") %>'></asp:HyperLink>
                         <br />
-                        <asp:Image ID="imgProduct" runat="server"  ImageAlign="Middle" ImageUrl='<%#"~/Images/Products/" + Eval("image") %>' />
+                        <asp:Image ID="imgProduct" runat="server"  ImageAlign="left" CssClass="productListingImage" ImageUrl='<%#"~/Images/Products/" + Eval("image") %>' />
                         <br />
-                        <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
-                        <br />
+                        <asp:Label ID="priceLabel" runat="server" CssClass="productListingPrice" Text='<%# Eval("price") %>' />
+                        <br /><br />
                     </ItemTemplate>
                 </asp:DataList>
                 
