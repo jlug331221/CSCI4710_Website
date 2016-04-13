@@ -38,7 +38,11 @@
                     <asp:Image ID="imgBrand" runat="server" ImageUrl="~/Images/Brands/Alpine_Logo.jpg" CssClass="brandImage img-responsive center-block" BorderStyle="Solid" BorderColor="Black" />
                 </div>
                 <div>
-                    <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btn btn-info AddToCart center-block" />
+                    <div class="center"></div>
+                        <asp:Label ID="lblQuantity" runat="server" Text="Enter Quantity"></asp:Label>
+                        <asp:TextBox ID="txtQuantity" runat="server"  Width="40px"></asp:TextBox>
+                        <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btn btn-info AddToCart" OnClick="btnAddToCart_Click" />
+                    </div>
                 </div>
             </div>
         </div>

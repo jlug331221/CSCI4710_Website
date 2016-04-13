@@ -36,4 +36,23 @@ public partial class ProductItem : System.Web.UI.Page
 
         return p;
     }
+
+    protected void btnAddToCart_Click(object sender, EventArgs e)
+    {
+        if (Page.IsValid)
+        {
+            Product productToCart = getProduct();
+            CartItemList cart = CartItemList.GetCart();
+            CartItem cartItem = cart[productToCart.ProductName];
+            if (cartItem == null)
+            {
+                cart.AddItem(productToCart, 1);
+            }
+            else
+            {
+                cartItem.AddQuantity(1);
+            }
+            Response.Redirect("Cart.aspx");
+        }
+    }
 }

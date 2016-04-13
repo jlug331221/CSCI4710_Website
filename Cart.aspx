@@ -14,7 +14,7 @@
 
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-9">
                     <asp:ListBox ID="lstItemsCart" runat="server"
                         class="lstItemsCart">
                     </asp:ListBox>
