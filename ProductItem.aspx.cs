@@ -46,11 +46,11 @@ public partial class ProductItem : System.Web.UI.Page
             CartItem cartItem = cart[productToCart.ProductName];
             if (cartItem == null)
             {
-                cart.AddItem(productToCart, 1);
+                cart.AddItem(productToCart, Convert.ToInt32(txtQuantity.Text));
             }
             else
             {
-                cartItem.AddQuantity(1);
+                cartItem.AddQuantity(Convert.ToInt32(txtQuantity.Text));
             }
             Response.Redirect("Cart.aspx");
         }
