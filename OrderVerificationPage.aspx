@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMasterPage.master" AutoEventWireup="true" CodeFile="VerificationPage.aspx.cs" Inherits="VerificationPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMasterPage.master" AutoEventWireup="true" CodeFile="OrderVerificationPage.aspx.cs" Inherits="VerificationPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -10,9 +10,7 @@
                 <h1>Confirm Your Order</h1>
             </div>
         </div>
-
-        <asp:Label ID="lblCustomerName" runat="server" Text="Label"></asp:Label>
-
+        <asp:Label ID="lblInputNameFromPrevPage" runat="server"></asp:Label>
     </div>
 </asp:Content>
 

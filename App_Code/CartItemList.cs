@@ -17,6 +17,15 @@ public class CartItemList
         get { return cartItems.Count; }
     }
 
+    public int totalItemCount()
+    {
+        int total = 0;
+        foreach(CartItem c in cartItems) {
+            total += c.Quantity * 1;
+        }
+        return total;
+    }
+
     public CartItem this[int index]
     {
         get { return cartItems[index]; }

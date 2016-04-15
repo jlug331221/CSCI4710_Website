@@ -1,0 +1,14 @@
+﻿.required_checkOut_info {
+    color: red;
+}
+
+@media screen and (max-width: 990px) {
+    .CheckOut_confirm_order_btn {
+        margin-top: 20px;
+        background-color: #95a5a6;
+    }
+
+    #selectMonth {
+        margin-bottom: 5px;
+    }
+}

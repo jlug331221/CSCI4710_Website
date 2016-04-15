@@ -3,7 +3,7 @@
 }
 
 .empty_cart_btn {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .lstItemsCart {
@@ -15,4 +15,8 @@
     font-size: large;
     text-indent: 5px;
     padding-bottom: 1em;
+}
+
+.remove_cart_item_btn {
+    margin-top: 10px;
 }

@@ -10,6 +10,8 @@
     <link href="CSS/BootstrapFlatly.css" type="text/css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="CSS/flexboxgrid.css" type="text/css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -41,7 +43,14 @@
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="Cart.aspx"><i class="fa fa-shopping-cart fa-lg"></i></a></li>
+                    <li>
+                        <a href="Cart.aspx">
+                            <i class="fa fa-shopping-cart fa-lg"></i>&nbsp;&nbsp
+                            <span class="badge">
+                                <asp:Label ID="cartCount" runat="server" Text="Label"></asp:Label>
+                            </span>
+                        </a>
+                    </li>
                     <li><a href="#">Login</a></li>
                     <li><a href="#">Sign Up</a></li>
                 </ul>

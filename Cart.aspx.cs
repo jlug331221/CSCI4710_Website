@@ -13,7 +13,7 @@ public partial class Cart : System.Web.UI.Page
     {
         cart = CartItemList.GetCart();
 
-        lblSubtotalAmt.Text = cart.getCartSubTotal().ToString("c");
+        lblSubtotalAmt.Text = "Subtotal Amount due: " + cart.getCartSubTotal().ToString("c");
 
         if (!IsPostBack)
         {
@@ -34,8 +34,8 @@ public partial class Cart : System.Web.UI.Page
 
     protected void btnCheckOut_Click(object sender, EventArgs e)
     {
-        lblMessage.Text = "Sorry, that function hasn't been "
-                        + "implemented yet.";
+        /*lblMessage.Text = "Sorry, that function hasn't been "
+                        + "implemented yet.";*/
     }
 
     protected void btnRemove_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ public partial class Cart : System.Web.UI.Page
             {
                 cart.RemoveAt(lstItemsCart.SelectedIndex);
                 this.DisplayCart();
-                lblSubtotalAmt.Text = cart.getCartSubTotal().ToString("c");
+                lblSubtotalAmt.Text = "Subtotal Amount due: " + cart.getCartSubTotal().ToString("c");
             }
             else
             {
@@ -61,7 +61,7 @@ public partial class Cart : System.Web.UI.Page
         {
             cart.Clear();
             lstItemsCart.Items.Clear();
-            lblSubtotalAmt.Text = cart.getCartSubTotal().ToString("c");
+            lblSubtotalAmt.Text = "Subtotal Amount due: " + cart.getCartSubTotal().ToString("c");
         }
     }
 }

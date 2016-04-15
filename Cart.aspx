@@ -14,18 +14,31 @@
 
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <div class="col-xs-12 col-md-9">
+                <div class="col-xs-12 col-md-12">
                     <asp:ListBox ID="lstItemsCart" runat="server"
                         class="lstItemsCart">
                     </asp:ListBox>
+
+                    <asp:Button ID="btnRemove" runat="server"
+                        class="btn btn-primary remove_cart_item_btn"
+                        text="Remove Item" OnClick="btnRemove_Click"
+                        usesubmitbehavior="false">
+                    </asp:Button>
+                    <asp:Button ID="btnEmpty" runat="server"
+                        class="btn btn-primary empty_cart_btn"
+                        text="Empty Cart" OnClick="btnEmpty_Click">
+                    </asp:Button>
                     
                     <hr />
 
-                    <asp:Label ID="lblSubtotalAmt" runat="server" Text="Label"></asp:Label>
-                    
+                    <h3><asp:Label ID="lblSubtotalAmt" runat="server" Text="Label"></asp:Label></h3>
+                    <br />
+                </div>
+
+                <div class="col-xs-12 col-md-12">
                     <asp:Button ID="btnContinue" runat="server"
-                        class="btn btn-primary continue_shopping_btn"
-                        text="Continue Shopping" PostBackUrl="~/Default.aspx">
+                    class="btn btn-primary continue_shopping_btn"
+                    text="Continue Shopping" PostBackUrl="~/Default.aspx">
                     </asp:Button>
                     <asp:Button ID="btnCheckOut" runat="server"
                         class="btn btn-primary"
@@ -36,17 +49,6 @@
                         EnableViewState="False" 
                         ForeColor="Red">
                     </asp:Label>
-                </div>
-
-                <div class="col-xs-12 col-md-6">
-                    <asp:Button ID="btnRemove" runat="server"
-                        class="btn btn-primary"
-                        text="Remove Item" OnClick="btnRemove_Click">
-                    </asp:Button> <br />
-                    <asp:Button ID="btnEmpty" runat="server"
-                        class="btn btn-primary empty_cart_btn"
-                        text="Empty Cart" OnClick="btnEmpty_Click">
-                    </asp:Button>
                 </div>
             </div>
         </div>
