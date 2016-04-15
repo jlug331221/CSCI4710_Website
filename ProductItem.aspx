@@ -42,6 +42,8 @@
                         <asp:Label ID="lblQuantity" runat="server" Text="Enter Quantity"></asp:Label>
                         <asp:TextBox ID="txtQuantity" runat="server"  Width="40px" ValidationGroup="quantity"></asp:TextBox>&nbsp;
                         <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btn btn-info" OnClick="btnAddToCart_Click" />
+                        <br />
+                        <asp:Label ID="lblOnhand" runat="server" Text="Label"></asp:Label>
                     </div>
                     <asp:RequiredFieldValidator 
                             ID="RequiredFieldValidator1" runat="server" 
@@ -51,8 +53,7 @@
                         </asp:RequiredFieldValidator>
                         <asp:RangeValidator ID="RangeValidator1" runat="server" 
                             ControlToValidate="txtQuantity" Display="Dynamic" 
-                            ErrorMessage="Quantity must range from 1 to 99."
-                            MaximumValue="99" MinimumValue="1" Type="Integer" 
+                            MinimumValue="1" Type="Integer" 
                             CssClass="validator" ValidationGroup="quantity">
                         </asp:RangeValidator>
                 </div>

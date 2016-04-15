@@ -56,4 +56,14 @@ public class CartItemList
     {
         cartItems.Clear();
     }
+
+    public decimal getCartSubTotal() {
+        decimal subtotal = 0;
+        foreach(CartItem c in cartItems)
+        {
+            subtotal += c.Quantity * c.Product.UnitPrice;
+        }
+
+        return subtotal;
+    }
 }

@@ -12,6 +12,9 @@ public partial class Cart : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         cart = CartItemList.GetCart();
+
+        lblSubtotalAmt.Text = cart.getCartSubTotal().ToString("c");
+
         if (!IsPostBack)
         {
             this.DisplayCart();
@@ -43,6 +46,7 @@ public partial class Cart : System.Web.UI.Page
             {
                 cart.RemoveAt(lstItemsCart.SelectedIndex);
                 this.DisplayCart();
+                lblSubtotalAmt.Text = cart.getCartSubTotal().ToString("c");
             }
             else
             {
@@ -57,6 +61,7 @@ public partial class Cart : System.Web.UI.Page
         {
             cart.Clear();
             lstItemsCart.Items.Clear();
+            lblSubtotalAmt.Text = cart.getCartSubTotal().ToString("c");
         }
     }
 }

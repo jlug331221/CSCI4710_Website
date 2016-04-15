@@ -20,14 +20,16 @@
                     </asp:ListBox>
                     
                     <hr />
+
+                    <asp:Label ID="lblSubtotalAmt" runat="server" Text="Label"></asp:Label>
                     
                     <asp:Button ID="btnContinue" runat="server"
                         class="btn btn-primary continue_shopping_btn"
-                        text="Continue Shopping">
+                        text="Continue Shopping" PostBackUrl="~/Default.aspx">
                     </asp:Button>
                     <asp:Button ID="btnCheckOut" runat="server"
                         class="btn btn-primary"
-                        text="Checkout" OnClick="btnCheckOut_Click">
+                        text="Checkout" OnClick="btnCheckOut_Click" PostBackUrl="~/CheckOut.aspx">
                     </asp:Button> <br /> <br />
 
                     <asp:Label ID="lblMessage" runat="server" 

@@ -17,6 +17,10 @@ public partial class ProductItem : System.Web.UI.Page
         lblWeight.Text = p.Weight.ToString();
         imgProduct.ImageUrl = "Images/Products/" + p.ImageFile;
         imgBrand.ImageUrl = "Images/Brands/" + p.BrandImage;
+        lblOnhand.Text = "Quantity on hand: " + p.ProductOnHand.ToString();
+        RangeValidator1.MaximumValue = p.ProductOnHand.ToString();
+        RangeValidator1.ErrorMessage = "Quantity must range from 1 to " 
+            + p.ProductOnHand.ToString();
     }
 
     public Product getProduct()
@@ -42,17 +46,23 @@ public partial class ProductItem : System.Web.UI.Page
         if (Page.IsValid)
         {
             Product productToCart = getProduct();
-            CartItemList cart = CartItemList.GetCart();
-            CartItem cartItem = cart[productToCart.ProductName];
-            if (cartItem == null)
+            int lblQuantityInteger = Convert.ToInt32(txtQuantity.Text);
+            if (lblQuantityInteger <= productToCart.ProductOnHand &&
+                lblQuantityInteger > 0)
             {
-                cart.AddItem(productToCart, Convert.ToInt32(txtQuantity.Text));
+                CartItemList cart = CartItemList.GetCart();
+                CartItem cartItem = cart[productToCart.ProductName];
+
+                if (cartItem == null)
+                {
+                    cart.AddItem(productToCart, Convert.ToInt32(txtQuantity.Text));
+                }
+                else
+                {
+                    cartItem.AddQuantity(Convert.ToInt32(txtQuantity.Text));
+                }
+                Response.Redirect("Cart.aspx");
             }
-            else
-            {
-                cartItem.AddQuantity(Convert.ToInt32(txtQuantity.Text));
-            }
-            Response.Redirect("Cart.aspx");
         }
     }
 }
