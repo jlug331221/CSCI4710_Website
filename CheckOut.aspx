@@ -13,6 +13,8 @@
             </div>
         </div>
 
+        <hr />
+
         <div class="row">
             <div class="col-xs-12 col-md-12">
                 
@@ -39,7 +41,7 @@
                             <label for="inputCCNumber" class="col-md-3 control-label">Credit Card #</label>
                             <div class="col-md-4">
                                 <asp:TextBox ID="inputCCNumber" class="form-control" 
-                                    placeholder="XXXX-XXXX-XXXX-XXXX" 
+                                    placeholder="CC Number - only digits" 
                                     runat="server">
                                 </asp:TextBox>
                             </div>
@@ -50,6 +52,12 @@
                                     CssClass="required_checkOut_info" Display="Dynamic"
                                     ValidationGroup="confirm_order">
                                 </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionCCNumberFieldValidator1" 
+                                    runat="server" ErrorMessage="**Enter valid CC Number (Must be 16 digits long)"
+                                    ValidationExpression="^[0-9]{16}$" ControlToValidate="inputCCNumber"
+                                    Font-Bold="True" CSSClass="required_checkOut_info" 
+                                    ValidationGroup="confirm_order">
+                                </asp:RegularExpressionValidator>
                             </div>
                         </div>
                         <div class="form-group">
@@ -67,35 +75,45 @@
                                     CssClass="required_checkOut_info" Display="Dynamic" 
                                     ValidationGroup="confirm_order">
                                 </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                                    ErrorMessage="**Enter valid CCV (Must be 3 digits long)"
+                                    ValidationExpression="^[0-9]{3}$" ControlToValidate="inputCCV"
+                                    Font-Bold="True" CSSClass="required_checkOut_info" 
+                                    ValidationGroup="confirm_order">
+                                </asp:RegularExpressionValidator>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputExpDate" class="col-md-3 control-label">Exp Date</label>
                             <div class="col-md-2">
-                                <select class="form-control" id="selectMonth">
-                                    <option>01</option>
-                                    <option>02</option>
-                                    <option>03</option>
-                                    <option>04</option>
-                                    <option>05</option>
-                                    <option>06</option>
-                                    <option>07</option>
-                                    <option>08</option>
-                                    <option>09</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
-                                </select>
+                                <asp:DropDownList class="form-control" 
+                                    id="selectMonth" name="CCMonth"
+                                    runat="server">
+                                    <asp:ListItem>01</asp:ListItem>
+                                    <asp:ListItem>02</asp:ListItem>
+                                    <asp:ListItem>03</asp:ListItem>
+                                    <asp:ListItem>04</asp:ListItem>
+                                    <asp:ListItem>05</asp:ListItem>
+                                    <asp:ListItem>06</asp:ListItem>
+                                    <asp:ListItem>07</asp:ListItem>
+                                    <asp:ListItem>08</asp:ListItem>
+                                    <asp:ListItem>09</asp:ListItem>
+                                    <asp:ListItem>10</asp:ListItem>
+                                    <asp:ListItem>11</asp:ListItem>
+                                    <asp:ListItem>12</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                             <div class="col-md-2">
-                                <select class="form-control" id="selectYear">
-                                    <option>2016</option>
-                                    <option>2017</option>
-                                    <option>2018</option>
-                                    <option>2019</option>
-                                    <option>2020</option>
-                                    <option>2021</option>
-                                </select>
+                                <asp:DropDownList class="form-control" 
+                                    id="selectYear" name="CCYear"
+                                    runat="server">
+                                    <asp:ListItem>2016</asp:ListItem>
+                                    <asp:ListItem>2017</asp:ListItem>
+                                    <asp:ListItem>2018</asp:ListItem>
+                                    <asp:ListItem>2019</asp:ListItem>
+                                    <asp:ListItem>2020</asp:ListItem>
+                                    <asp:ListItem>2021</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                         </div>
                         <br />

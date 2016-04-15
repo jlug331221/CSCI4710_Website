@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMasterPage.master" AutoEventWireup="true" CodeFile="ProductItem.aspx.cs" Inherits="ProductItem" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <link href="CSS/Product.css" rel="stylesheet" />
+    <link href="CSS/ProductItem.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -40,7 +40,7 @@
                 <div>
                     <div class="center-block quantity"></div>
                         <asp:Label ID="lblQuantity" runat="server" Text="Enter Quantity"></asp:Label>
-                        <asp:TextBox ID="txtQuantity" runat="server"  Width="40px" ValidationGroup="quantity"></asp:TextBox>&nbsp;
+                        <asp:TextBox ID="txtQuantity" runat="server"  Width="40px" ValidationGroup="quantity" CssClass="txtQuantity"></asp:TextBox>&nbsp;
                         <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btn btn-info" OnClick="btnAddToCart_Click" />
                         <br />
                         <asp:Label ID="lblOnhand" runat="server" Text="Label"></asp:Label>
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
     <asp:SqlDataSource ID="ProductDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [product_id], [product_name], [price], [prod_on_hand], [weight], [brand_image], [description], [image] FROM [Product] INNER JOIN [Brand] ON (Product.brand_id = Brand.brand_id) WHERE ([product_id] = @product_id)">
         <SelectParameters>
             <asp:QueryStringParameter Name="product_id" QueryStringField="product_id" Type="Int32" />
