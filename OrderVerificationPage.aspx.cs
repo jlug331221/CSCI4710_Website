@@ -11,7 +11,7 @@ public partial class VerificationPage : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        CartItemList.GetCart();
+        cartItems = CartItemList.GetCart();
 
         ContentPlaceHolder checkOutPageContentHolder = (ContentPlaceHolder)Page
             .PreviousPage.Form.FindControl("ContentPlaceHolder1");
@@ -32,7 +32,39 @@ public partial class VerificationPage : System.Web.UI.Page
             lblInputNameFromChkOutPage.Text = "NO ORDER DATA AVAILABLE";
         }
 
-        /*rptCartItems.DataSource = cartItems;
-        rptCartItems.DataBind();*/
+        if (!IsPostBack)
+        {
+            this.DisplayCart();
+        }
+    }
+
+    private void DisplayCart()
+    {
+        lstItemsCart.Items.Clear();
+        CartItem item;
+        for (int i = 0; i < cartItems.Count; i++)
+        {
+            item = cartItems[i];
+            lstItemsCart.Items.Add(item.Display());
+        }
+    }
+
+    protected void btnSubmitOrder_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void decrementQuantity()
+    {
+        
+        for (int i = 0; i < cartItems.Count; i++)
+        {
+            CartItem item = cartItems[i];
+            int quantity = item.Quantity;
+            int id = item.Product.ProductID;
+            //decrement quantity update SQL command
+            int newQuantity = item.Product.ProductOnHand - quantity;
+            
+        }
     }
 }

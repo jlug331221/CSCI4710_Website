@@ -49,17 +49,24 @@
         
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <!--<asp:Repeater ID="rptCartItems" runat="server">
-                    <HeaderTemplate><table style="width: 100%" align="center"></HeaderTemplate>
-                    <ItemTemplate>
-                    <tr>
-                        <td><strong>Product <%# //Container.ItemIndex + 1 %>:</strong></td>
-                        <td><%# //Container.DataItem %></td>
-                    </tr>
-                    </ItemTemplate>
-                    <FooterTemplate></table></FooterTemplate>
-                </asp:Repeater>-->
+                <asp:ListBox ID="lstItemsCart" runat="server"
+                        class="lstCartItems" CssClass="lstCartItems">
+                    </asp:ListBox>
+                <br />
+                <asp:Button ID="btnSubmitOrder" runat="server"
+                                    class="btn btn-primary submit_order_btn"
+                                    Text="Submit Order" PostBackUrl="~/Default.aspx" 
+                                    CssClass="btn btn-primary CheckOut_confirm_order_btn" OnClick="btnSubmitOrder_Click">
+                </asp:Button>
             </div>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                UpdateCommand="UPDATE [Product] SET [prod_on_hand] = @prod_on_hand WHERE [product_id] = @original_product_id AND [prod_on_hand] = @original_prod_on_hand">
+                <UpdateParameters>
+                    <asp:Parameter Name="prod_on_hand" Type="Int32" />
+                    <asp:Parameter Name="original_product_id" Type="Int32" />
+                    <asp:Parameter Name="original_prod_on_hand" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
         </div>
         
     </div>

@@ -14,7 +14,7 @@ public partial class ProductItem : System.Web.UI.Page
         lblProductName.Text = p.ProductName.ToString();
         lblProductPrice.Text = p.UnitPrice.ToString("c");
         lblDescription.Text = p.Description.ToString();
-        lblWeight.Text = p.Weight.ToString();
+        lblWeight.Text += p.Weight.ToString();
         imgProduct.ImageUrl = "Images/Products/" + p.ImageFile;
         imgBrand.ImageUrl = "Images/Brands/" + p.BrandImage;
         lblOnhand.Text = "Quantity on hand: " + p.ProductOnHand.ToString();

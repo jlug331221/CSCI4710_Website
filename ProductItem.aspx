@@ -29,8 +29,9 @@
                 <div>
                     <asp:Label ID="lblDescription" runat="server" Text="..."></asp:Label>
                 </div>
+                <br />
                 <div>
-                    <asp:Label ID="lblWeight" runat="server" Text="0.0 lbs."></asp:Label>
+                    <asp:Label ID="lblWeight" runat="server" Text="Weight (lbs): "></asp:Label>
                 </div>
             </div>
             <div class="col-md-5">

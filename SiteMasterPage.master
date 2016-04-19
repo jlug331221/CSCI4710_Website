@@ -51,7 +51,7 @@
                             </span>
                         </a>
                     </li>
-                    <li><a href="#">Login</a></li>
+                    <li><a href="Login.aspx">Login</a></li>
                     <li><a href="#">Sign Up</a></li>
                 </ul>
             </div>
@@ -95,6 +95,7 @@
                                         Font-Strikeout="False" 
                                         Font-Underline="False" />
                                 </asp:DataList>
+                                <asp:LoginStatus ID="LoginStatus1" runat="server" />
 
                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"
                                     ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
@@ -116,6 +117,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
 
         <hr />
