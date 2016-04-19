@@ -51,20 +51,28 @@ public partial class VerificationPage : System.Web.UI.Page
 
     protected void btnSubmitOrder_Click(object sender, EventArgs e)
     {
-
+        decrementQuantity();
+        Response.Redirect("OrderVerificationPage.aspx");
     }
 
     private void decrementQuantity()
-    {
-        
+    {  
         for (int i = 0; i < cartItems.Count; i++)
         {
             CartItem item = cartItems[i];
             int quantity = item.Quantity;
             int id = item.Product.ProductID;
-            //decrement quantity update SQL command
+            SqlDataSource1.UpdateParameters["product_id"].DefaultValue
+                = id.ToString();
             int newQuantity = item.Product.ProductOnHand - quantity;
-            
+            SqlDataSource1.UpdateParameters["prod_on_hand"].DefaultValue
+                = newQuantity.ToString();
+            SqlDataSource1.Update();
         }
+    }
+
+    protected void SqlDataSource1_Updated(object sender, SqlDataSourceStatusEventArgs e)
+    {
+       
     }
 }

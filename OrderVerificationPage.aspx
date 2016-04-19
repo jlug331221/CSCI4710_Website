@@ -59,12 +59,21 @@
                                     CssClass="btn btn-primary CheckOut_confirm_order_btn" OnClick="btnSubmitOrder_Click">
                 </asp:Button>
             </div>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-                UpdateCommand="UPDATE [Product] SET [prod_on_hand] = @prod_on_hand WHERE [product_id] = @original_product_id AND [prod_on_hand] = @original_prod_on_hand">
-                <UpdateParameters>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                DeleteCommand="DELETE FROM [Product] WHERE [product_id] = @product_id" 
+                InsertCommand="INSERT INTO [Product] ([prod_on_hand]) VALUES (@prod_on_hand)" 
+                SelectCommand="SELECT [product_id], [prod_on_hand] FROM [Product]" 
+                UpdateCommand="UPDATE [Product] SET [prod_on_hand] = (@prod_on_hand) WHERE [product_id] = (@product_id)" OnUpdated="SqlDataSource1_Updated">
+                <DeleteParameters>
+                    <asp:Parameter Name="product_id" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
                     <asp:Parameter Name="prod_on_hand" Type="Int32" />
-                    <asp:Parameter Name="original_product_id" Type="Int32" />
-                    <asp:Parameter Name="original_prod_on_hand" Type="Int32" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="product_id" Type="Int32" />
+                    <asp:Parameter Name="prod_on_hand" Type="Int32" />
                 </UpdateParameters>
             </asp:SqlDataSource>
         </div>
