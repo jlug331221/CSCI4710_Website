@@ -22,11 +22,13 @@
                     <asp:Button ID="btnRemove" runat="server"
                         class="btn btn-primary remove_cart_item_btn"
                         text="Remove Item" OnClick="btnRemove_Click"
-                        usesubmitbehavior="false">
+                        usesubmitbehavior="false" 
+                        PostBackUrl="~/Cart.aspx">
                     </asp:Button>
                     <asp:Button ID="btnEmpty" runat="server"
                         class="btn btn-primary empty_cart_btn"
-                        text="Empty Cart" OnClick="btnEmpty_Click">
+                        text="Empty Cart" OnClick="btnEmpty_Click" 
+                        PostBackUrl="~/Cart.aspx">
                     </asp:Button>
                     
                     <hr />
@@ -42,7 +44,8 @@
                     </asp:Button>
                     <asp:Button ID="btnCheckOut" runat="server"
                         class="btn btn-primary"
-                        text="Checkout" OnClick="btnCheckOut_Click" PostBackUrl="~/CheckOut.aspx">
+                        text="Checkout" OnClick="btnCheckOut_Click" 
+                        PostBackUrl="~/CheckOut.aspx">
                     </asp:Button> <br /> <br />
 
                     <asp:Label ID="lblMessage" runat="server" 

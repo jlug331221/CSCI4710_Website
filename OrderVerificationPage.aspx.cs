@@ -5,19 +5,24 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using System.Data;
+using System.Configuration;
+
 public partial class VerificationPage : System.Web.UI.Page
 {
     private CartItemList cartItems;
+    private int cartItemQuantity;
+    private int cartItemProductId;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         cartItems = CartItemList.GetCart();
-
-        ContentPlaceHolder checkOutPageContentHolder = (ContentPlaceHolder)Page
-            .PreviousPage.Form.FindControl("ContentPlaceHolder1");
         
         if (PreviousPage != null && PreviousPage.IsCrossPagePostBack)
         {
+            ContentPlaceHolder checkOutPageContentHolder = (ContentPlaceHolder)Page
+            .PreviousPage.Form.FindControl("ContentPlaceHolder1");
+
             TextBox txtName = (TextBox)checkOutPageContentHolder
                 .FindControl("inputName");
             TextBox txtCCNumber = (TextBox)checkOutPageContentHolder
@@ -51,28 +56,31 @@ public partial class VerificationPage : System.Web.UI.Page
 
     protected void btnSubmitOrder_Click(object sender, EventArgs e)
     {
-        decrementQuantity();
-        Response.Redirect("OrderVerificationPage.aspx");
+        this.decrementOnHandQuantity();
+        cartItems.Clear();
+        ((Label)Master.FindControl("lblCartCount")).Text =
+                    CartItemList.GetCart().totalItemCount().ToString();
+        Response.Redirect("OrderPlaced.aspx");
     }
 
-    private void decrementQuantity()
+    private void decrementOnHandQuantity()
     {  
         for (int i = 0; i < cartItems.Count; i++)
         {
             CartItem item = cartItems[i];
-            int quantity = item.Quantity;
-            int id = item.Product.ProductID;
-            SqlDataSource1.UpdateParameters["product_id"].DefaultValue
-                = id.ToString();
-            int newQuantity = item.Product.ProductOnHand - quantity;
-            SqlDataSource1.UpdateParameters["prod_on_hand"].DefaultValue
-                = newQuantity.ToString();
-            SqlDataSource1.Update();
+            cartItemQuantity = item.Quantity;
+            cartItemProductId = item.Product.ProductID;
+            int newOnHandQuantity = item.Product.ProductOnHand - cartItemQuantity;
+            /*SQLUpdateDataSource.UpdateCommand = "UPDATE Product SET [prod_on_hand] = " +
+                 newOnHandQuantity.ToString() + " WHERE [product_id] = " +
+                 cartItemProductId.ToString();*/
+            
+            SQLUpdateDataSource.UpdateParameters["product_id"].DefaultValue
+                = cartItemProductId.ToString();
+            
+            SQLUpdateDataSource.UpdateParameters["prod_on_hand"].DefaultValue
+                = newOnHandQuantity.ToString();
+            SQLUpdateDataSource.Update();
         }
-    }
-
-    protected void SqlDataSource1_Updated(object sender, SqlDataSourceStatusEventArgs e)
-    {
-       
     }
 }

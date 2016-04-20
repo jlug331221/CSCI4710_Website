@@ -50,21 +50,21 @@
         <div class="row">
             <div class="col-xs-12 col-md-12">
                 <asp:ListBox ID="lstItemsCart" runat="server"
-                        class="lstCartItems" CssClass="lstCartItems">
+                        class="lstCartItems" CssClass="lstCartItems"
+                        DataKeyNames="product_id, prod_on_hand">
                     </asp:ListBox>
                 <br />
                 <asp:Button ID="btnSubmitOrder" runat="server"
-                                    class="btn btn-primary submit_order_btn"
-                                    Text="Submit Order" PostBackUrl="~/Default.aspx" 
-                                    CssClass="btn btn-primary CheckOut_confirm_order_btn" OnClick="btnSubmitOrder_Click">
+                    class="btn btn-primary submit_order_btn"
+                    Text="Submit Order" 
+                    CssClass="btn btn-primary CheckOut_confirm_order_btn" 
+                    OnClick="btnSubmitOrder_Click">
                 </asp:Button>
             </div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            <asp:SqlDataSource ID="SQLUpdateDataSource" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-                DeleteCommand="DELETE FROM [Product] WHERE [product_id] = @product_id" 
-                InsertCommand="INSERT INTO [Product] ([prod_on_hand]) VALUES (@prod_on_hand)" 
                 SelectCommand="SELECT [product_id], [prod_on_hand] FROM [Product]" 
-                UpdateCommand="UPDATE [Product] SET [prod_on_hand] = (@prod_on_hand) WHERE [product_id] = (@product_id)" OnUpdated="SqlDataSource1_Updated">
+                UpdateCommand="UPDATE [Product] SET [prod_on_hand] = @prod_on_hand WHERE [product_id] = @product_id">
                 <DeleteParameters>
                     <asp:Parameter Name="product_id" Type="Int32" />
                 </DeleteParameters>
@@ -72,8 +72,8 @@
                     <asp:Parameter Name="prod_on_hand" Type="Int32" />
                 </InsertParameters>
                 <UpdateParameters>
-                    <asp:Parameter Name="product_id" Type="Int32" />
                     <asp:Parameter Name="prod_on_hand" Type="Int32" />
+                    <asp:Parameter Name="product_id" Type="Int32" />
                 </UpdateParameters>
             </asp:SqlDataSource>
         </div>

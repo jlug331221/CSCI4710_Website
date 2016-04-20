@@ -19,38 +19,38 @@
 </head>
 <body class="ifDesktop">
     <form id="form1" runat="server">
-    <nav class="navbar navbar-default no-margin">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/Default.aspx">Brand</a>
-            </div>
+        <nav class="navbar navbar-default no-margin">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/Default.aspx">Brand</a>
+                </div>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="Cart.aspx">
-                            <i class="fa fa-shopping-cart fa-lg"></i>&nbsp;&nbsp
-                            <span class="badge">
-                                <asp:Label ID="cartCount" runat="server" Text="Label"></asp:Label>
-                            </span>
-                        </a>
-                    </li>
-                    <li><asp:LoginStatus ID="LoginStatus1" runat="server" /></li>
-                    <li><a href="CreateUser.aspx">Sign Up</a></li>
-                </ul>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="Cart.aspx">
+                                <i class="fa fa-shopping-cart fa-lg"></i>&nbsp;&nbsp
+                                <span class="badge">
+                                    <asp:Label ID="lblCartCount" runat="server" Text="Label"></asp:Label>
+                                </span>
+                            </a>
+                        </li>
+                        <li><asp:LoginStatus ID="LoginStatus1" runat="server" /></li>
+                        <li><a href="CreateUser.aspx">Sign Up</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
     
         <div class="container-fluid" id="page_content">

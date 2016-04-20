@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using System.Configuration;
+
 public partial class Cart : System.Web.UI.Page
 {
     private CartItemList cart;
@@ -12,6 +14,8 @@ public partial class Cart : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         cart = CartItemList.GetCart();
+        ((Label)Master.FindControl("lblCartCount")).Text =
+                    cart.totalItemCount().ToString();
 
         lblSubtotalAmt.Text = "Subtotal Amount due: " + cart.getCartSubTotal().ToString("c");
 
@@ -34,8 +38,7 @@ public partial class Cart : System.Web.UI.Page
 
     protected void btnCheckOut_Click(object sender, EventArgs e)
     {
-        /*lblMessage.Text = "Sorry, that function hasn't been "
-                        + "implemented yet.";*/
+        
     }
 
     protected void btnRemove_Click(object sender, EventArgs e)
@@ -47,6 +50,8 @@ public partial class Cart : System.Web.UI.Page
                 cart.RemoveAt(lstItemsCart.SelectedIndex);
                 this.DisplayCart();
                 lblSubtotalAmt.Text = "Subtotal Amount due: " + cart.getCartSubTotal().ToString("c");
+                ((Label)Master.FindControl("lblCartCount")).Text =
+                    CartItemList.GetCart().totalItemCount().ToString();
             }
             else
             {
@@ -62,6 +67,8 @@ public partial class Cart : System.Web.UI.Page
             cart.Clear();
             lstItemsCart.Items.Clear();
             lblSubtotalAmt.Text = "Subtotal Amount due: " + cart.getCartSubTotal().ToString("c");
+            ((Label)Master.FindControl("lblCartCount")).Text =
+                    CartItemList.GetCart().totalItemCount().ToString();
         }
     }
 }
