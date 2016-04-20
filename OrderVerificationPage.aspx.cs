@@ -71,9 +71,6 @@ public partial class VerificationPage : System.Web.UI.Page
             cartItemQuantity = item.Quantity;
             cartItemProductId = item.Product.ProductID;
             int newOnHandQuantity = item.Product.ProductOnHand - cartItemQuantity;
-            /*SQLUpdateDataSource.UpdateCommand = "UPDATE Product SET [prod_on_hand] = " +
-                 newOnHandQuantity.ToString() + " WHERE [product_id] = " +
-                 cartItemProductId.ToString();*/
             
             SQLUpdateDataSource.UpdateParameters["product_id"].DefaultValue
                 = cartItemProductId.ToString();

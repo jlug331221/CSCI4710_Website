@@ -50,10 +50,12 @@
         <div class="row">
             <div class="col-xs-12 col-md-12">
                 <asp:ListBox ID="lstItemsCart" runat="server"
-                        class="lstCartItems" CssClass="lstCartItems"
-                        DataKeyNames="product_id, prod_on_hand">
-                    </asp:ListBox>
-                <br />
+                    class="lstCartItems" CssClass="lstCartItems"
+                    DataKeyNames="product_id, prod_on_hand">
+                </asp:ListBox>
+                
+                <br /><br />
+
                 <asp:Button ID="btnSubmitOrder" runat="server"
                     class="btn btn-primary submit_order_btn"
                     Text="Submit Order" 

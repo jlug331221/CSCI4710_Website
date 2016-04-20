@@ -44,8 +44,7 @@
                     </asp:Button>
                     <asp:Button ID="btnCheckOut" runat="server"
                         class="btn btn-primary"
-                        text="Checkout" OnClick="btnCheckOut_Click" 
-                        PostBackUrl="~/CheckOut.aspx">
+                        text="Checkout" OnClick="btnCheckOut_Click">
                     </asp:Button> <br /> <br />
 
                     <asp:Label ID="lblMessage" runat="server" 

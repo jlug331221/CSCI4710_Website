@@ -44,19 +44,21 @@
                         <asp:TextBox ID="txtQuantity" runat="server"  Width="40px" ValidationGroup="quantity" CssClass="txtQuantity"></asp:TextBox>&nbsp;
                         <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btn btn-info" OnClick="btnAddToCart_Click" />
                         <br />
+                        <asp:Label ID="lblQtyAlmostOut" runat="server" Text="Label"
+                            CSSClass="validator"></asp:Label> <br />
                         <asp:Label ID="lblOnhand" runat="server" Text="Label"></asp:Label>
                     </div>
                     <asp:RequiredFieldValidator 
-                            ID="RequiredFieldValidator1" runat="server" 
-                            ControlToValidate="txtQuantity" Display="Dynamic" 
-                            ErrorMessage="Quantity is a required field." 
-                            CssClass="validator" ValidationGroup="quantity">
-                        </asp:RequiredFieldValidator>
-                        <asp:RangeValidator ID="RangeValidator1" runat="server" 
-                            ControlToValidate="txtQuantity" Display="Dynamic" 
-                            MinimumValue="1" Type="Integer" 
-                            CssClass="validator" ValidationGroup="quantity">
-                        </asp:RangeValidator>
+                        ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="txtQuantity" Display="Dynamic" 
+                        ErrorMessage="Quantity is a required field." 
+                        CssClass="validator" ValidationGroup="quantity">
+                    </asp:RequiredFieldValidator>
+                    <asp:RangeValidator ID="RangeValidator1" runat="server" 
+                        ControlToValidate="txtQuantity" Display="Dynamic" 
+                        MinimumValue="1" Type="Integer" 
+                        CssClass="validator" ValidationGroup="quantity">
+                    </asp:RangeValidator>
                 </div>
             </div>
         </div>

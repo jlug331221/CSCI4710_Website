@@ -38,7 +38,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="Cart.aspx">
+                            <a href="~/Cart.aspx" runat="server">
                                 <i class="fa fa-shopping-cart fa-lg"></i>&nbsp;&nbsp
                                 <span class="badge">
                                     <asp:Label ID="lblCartCount" runat="server" Text="Label"></asp:Label>
@@ -101,7 +101,7 @@
 
                 <div class="col-xs-12 col-md-9" id="main_content">
                     <div id="business_logo">
-                        <img src="Images/Jeep%20Banner.jpg" class="img-responsive center-block" />
+                        <img src="~/Images/NewSiteBanner.jpg" class="img-responsive center-block" runat="server"/>
                     </div>
 
                     <div>

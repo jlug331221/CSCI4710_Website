@@ -21,6 +21,16 @@ public partial class ProductItem : System.Web.UI.Page
         RangeValidator1.MaximumValue = p.ProductOnHand.ToString();
         RangeValidator1.ErrorMessage = "Quantity must range from 1 to " 
             + p.ProductOnHand.ToString();
+
+        if(p.ProductOnHand <= 2)
+        {
+            lblQtyAlmostOut.Text = "Hurry! Buy now because there are only a limited amount of these " +
+                "items left on hand.";
+        }
+        else
+        {
+            lblQtyAlmostOut.Text = "";
+        }
     }
 
     public Product getProduct()

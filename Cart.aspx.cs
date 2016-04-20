@@ -38,7 +38,15 @@ public partial class Cart : System.Web.UI.Page
 
     protected void btnCheckOut_Click(object sender, EventArgs e)
     {
-        
+        if(cart.Count == 0)
+        {
+            lblMessage.Text = "You must have at least one item in your cart " +
+                "to begin the checkout process. Keep shopping Jeeper!";
+        }
+        else
+        {
+            Response.Redirect("~/MyAccount/CheckOut.aspx");
+        }
     }
 
     protected void btnRemove_Click(object sender, EventArgs e)

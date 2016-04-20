@@ -4,14 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Chapter 19: Authentication</title>
+    <title>Register Now</title>
     <link href="Main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div id="page">
         <div id="main">
-            <h1>The Halloween Store - My Account</h1>
             <p>
                 <asp:CreateUserWizard ID="CreateUserWizard1" runat="server">
                     <WizardSteps>
