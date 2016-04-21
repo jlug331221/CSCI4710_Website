@@ -14,10 +14,12 @@ public partial class VerificationPage : System.Web.UI.Page
     private int cartItemQuantity;
     private int cartItemProductId;
 
-    private const decimal flatRateShippingCost = 11.99m;
-    private const decimal taxRate = .045m;
+    private const decimal flatRateShippingCost = 7.99m;
+    private const decimal taxRate = .025m;
 
     private decimal subTotal = 0.0m;
+    private double totalWeightOfItems = 0.0;
+    private decimal additionalWeightCostInShipping = 0.0m;
     private decimal tax = 0.0m;
     private decimal shippingCost = 0.0m;
     private decimal total = 0.0m;
@@ -50,6 +52,9 @@ public partial class VerificationPage : System.Web.UI.Page
             lblCCExpYear.Text = ddlCCExpYear.Text.ToString();
 
             lblItemsCost.Text = cartItems.getCartSubTotal().ToString("c");
+
+            totalWeightOfItems = cartItems.getTotalCartItemsWeight();
+            additionalWeightCostInShipping = calculateAdditionalWeightCostInShipping();
 
             shippingCost = calculateShippingCost(ddlShippingMethod.Text.ToString());
             lblShippingCost.Text = shippingCost.ToString("c");
@@ -112,20 +117,34 @@ public partial class VerificationPage : System.Web.UI.Page
         }
     }
 
+    private decimal calculateAdditionalWeightCostInShipping()
+    {
+        if(totalWeightOfItems <= 5.0)
+        {
+            return 0.00m;
+        }
+        if(totalWeightOfItems > 5.0 && totalWeightOfItems <= 25)
+        {
+            return 10.00m;
+        }
+        return 20.00m;
+    }
+
     private decimal calculateShippingCost(String shippingSelection)
     {
         if (shippingSelection.Equals("USPS", StringComparison.Ordinal))
         {
-            return flatRateShippingCost;
+            return flatRateShippingCost + additionalWeightCostInShipping;
         }
-        else if(shippingSelection.Equals("UPS Ground", StringComparison.Ordinal))
+
+        if (shippingSelection.Equals("UPS Ground", StringComparison.Ordinal))
         {
-            return flatRateShippingCost + 5.00m;
+            return flatRateShippingCost + additionalWeightCostInShipping
+                + 10.99m;
         }
-        else
-        {
-            return flatRateShippingCost + 10.00m;
-        }
+
+        return flatRateShippingCost + additionalWeightCostInShipping
+            + 20.99m;
     }
 
     private decimal calculateSubTotal()

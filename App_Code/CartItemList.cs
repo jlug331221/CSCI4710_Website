@@ -75,4 +75,18 @@ public class CartItemList
 
         return subtotal;
     }
+
+    public double getTotalCartItemsWeight()
+    {
+        double productWeight = 0.0;
+        double totalWeight = 0.0;
+        foreach(CartItem c in cartItems)
+        {
+            Product p = c.Product;
+            productWeight = Convert.ToDouble((p.Weight));
+            totalWeight += productWeight;
+        }
+
+        return totalWeight;
+    }
 }
