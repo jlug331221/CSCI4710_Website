@@ -145,6 +145,29 @@
 
         <div class="row">
             <div class="col-xs-12 col-md-12">
+                <div class="col-xs-12 col-md-8">
+                    <h2 style="text-align: center;">Select Shipping Method</h2>
+                    <div class="form-group">
+                        <label for="mailDelivery" class="col-md-3 control-label"></label>
+                        <div class="col-md-6">
+                            <asp:DropDownList class="form-control" 
+                                ID="ddlMailDelivery" name="mailDelivery"
+                                CSSClass="form-control select_mail_delivery"
+                                runat="server">
+                                <asp:ListItem>USPS</asp:ListItem>
+                                <asp:ListItem>UPS Ground</asp:ListItem>
+                                <asp:ListItem>UPS Next Day Delivery</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
                 
                 <div class="col-xs-12 col-md-8">
                     <div class="form-horizontal">
@@ -217,8 +240,7 @@
                                 <label for="inputExpDate" class="col-md-3 control-label">Exp Date</label>
                                 <div class="col-md-2">
                                     <asp:DropDownList class="form-control" 
-                                        ID="selectMonth" name="CCMonth"
-                                        CSSClass="form-control select_month"
+                                        ID="ddlSelectExpMonth" name="CCMonth"
                                         runat="server">
                                         <asp:ListItem>01</asp:ListItem>
                                         <asp:ListItem>02</asp:ListItem>
@@ -236,7 +258,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <asp:DropDownList class="form-control" 
-                                        ID="selectYear" name="CCYear"
+                                        ID="ddlSelectExpYear" name="CCYear"
                                         runat="server">
                                         <asp:ListItem>2016</asp:ListItem>
                                         <asp:ListItem>2017</asp:ListItem>

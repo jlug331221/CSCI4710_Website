@@ -14,6 +14,14 @@ public partial class VerificationPage : System.Web.UI.Page
     private int cartItemQuantity;
     private int cartItemProductId;
 
+    private const decimal flatRateShippingCost = 11.99m;
+    private const decimal taxRate = .045m;
+
+    private decimal subTotal = 0.0m;
+    private decimal tax = 0.0m;
+    private decimal shippingCost = 0.0m;
+    private decimal total = 0.0m;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         cartItems = CartItemList.GetCart();
@@ -27,10 +35,33 @@ public partial class VerificationPage : System.Web.UI.Page
                 .FindControl("inputName");
             TextBox txtCCNumber = (TextBox)checkOutPageContentHolder
                 .FindControl("inputCCNumber");
+            DropDownList ddlShippingMethod = (DropDownList)checkOutPageContentHolder
+                .FindControl("ddlMailDelivery");
+            DropDownList ddlCCExpMonth = (DropDownList)checkOutPageContentHolder
+                .FindControl("ddlSelectExpMonth");
+            DropDownList ddlCCExpYear = (DropDownList)checkOutPageContentHolder
+                .FindControl("ddlSelectExpYear");
             
             lblInputNameFromChkOutPage.Text = txtName.Text;
             lblInputCCNumberFromChkOutPage.Text = "XXXX-XXXX-XXXX-" + 
                 txtCCNumber.Text.Substring(12);
+            lblSelectedShipping.Text = ddlShippingMethod.Text.ToString();
+            lblCCExpMonth.Text = ddlCCExpMonth.Text.ToString();
+            lblCCExpYear.Text = ddlCCExpYear.Text.ToString();
+
+            lblItemsCost.Text = cartItems.getCartSubTotal().ToString("c");
+
+            shippingCost = calculateShippingCost(ddlShippingMethod.Text.ToString());
+            lblShippingCost.Text = shippingCost.ToString("c");
+
+            subTotal = calculateSubTotal();
+            lblSubtotal.Text = subTotal.ToString("c");
+
+            tax = calculateTax();
+            lblTax.Text = tax.ToString("c");
+
+            lblTotal.Text = (subTotal + tax).ToString("c");
+
         }
         else
         {
@@ -79,5 +110,31 @@ public partial class VerificationPage : System.Web.UI.Page
                 = newOnHandQuantity.ToString();
             SQLUpdateDataSource.Update();
         }
+    }
+
+    private decimal calculateShippingCost(String shippingSelection)
+    {
+        if (shippingSelection.Equals("USPS", StringComparison.Ordinal))
+        {
+            return flatRateShippingCost;
+        }
+        else if(shippingSelection.Equals("UPS Ground", StringComparison.Ordinal))
+        {
+            return flatRateShippingCost + 5.00m;
+        }
+        else
+        {
+            return flatRateShippingCost + 10.00m;
+        }
+    }
+
+    private decimal calculateSubTotal()
+    {
+        return cartItems.getCartSubTotal() + shippingCost;
+    }
+
+    private decimal calculateTax()
+    {
+        return subTotal * taxRate;
     }
 }
