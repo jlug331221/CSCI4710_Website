@@ -13,275 +13,276 @@
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-12">
-            <asp:DetailsView ID="DetailsView1" runat="server"
-            DataSourceID="SqlDataSource2"  DataKeyNames="product_id"
-            Height="50px" Width="100%" AutoGenerateRows="False" 
-            BackColor="White" BorderColor="White" BorderStyle="Ridge" 
-            BorderWidth="2px" CellPadding="3" CellSpacing="1" 
-            GridLines="None" onitemdeleted="DetailsView1_ItemDeleted" 
-              onitemdeleting="DetailsView1_ItemDeleting" 
-              oniteminserted="DetailsView1_ItemInserted" 
-              onitemupdated="DetailsView1_ItemUpdated">
-          <Fields>
-            <asp:TemplateField HeaderText="Product ID:">
-              <ItemTemplate>
-                <asp:Label ID="Label4" runat="server"
-                    Text='<%# Bind("product_id") %>'></asp:Label>
-              </ItemTemplate>
-              <EditItemTemplate>
-                <asp:Label ID="Label1" runat="server"
-                    Text='<%# Eval("product_id") %>'></asp:Label>
-              </EditItemTemplate>
-              <InsertItemTemplate>
-                <asp:TextBox ID="txtID" runat="server"
-                    Text='<%# Bind("product_id") %>' Width="100px"
-                    MaxLength="10">
-                </asp:TextBox>
-                <asp:RequiredFieldValidator
-                    ID="RequiredFieldValidator1" runat="server" 
-                    ControlToValidate="txtID" 
-                    ErrorMessage="Product ID is a required field.">*
-                </asp:RequiredFieldValidator>
-              </InsertItemTemplate>
-              <HeaderStyle HorizontalAlign="Left" Width="130px" />
-              <ItemStyle Width="220px" />
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Name:">
-              <ItemTemplate>
-                <asp:Label ID="Label8" runat="server"
-                    Text='<%# Bind("product_name") %>'></asp:Label>
-              </ItemTemplate>
-              <EditItemTemplate>
-                <asp:TextBox ID="txtName" runat="server"
-                    Text='<%# Bind("product_name") %>' Width="200px" MaxLength="50">
-                </asp:TextBox>
-                <asp:RequiredFieldValidator
-                    ID="RequiredFieldValidator2" runat="server" 
-                    ControlToValidate="txtName" 
-                    ErrorMessage="Name is a required field.">*
-                </asp:RequiredFieldValidator>
-              </EditItemTemplate>
-              <InsertItemTemplate>
-                <asp:TextBox ID="txtName" runat="server"
-                    Text='<%# Bind("product_name") %>' Width="200px" MaxLength="50">
-                </asp:TextBox>
-                <asp:RequiredFieldValidator
-                    ID="RequiredFieldValidator3" runat="server" 
-                    ControlToValidate="txtName"  
-                    ErrorMessage="Name is a required field.">*
-                </asp:RequiredFieldValidator>
-              </InsertItemTemplate>
-              <HeaderStyle HorizontalAlign="Left" Width="130px" />
-              <ItemStyle Width="220px" />
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Description:">
-              <ItemTemplate>
-                <asp:Label ID="Label1" runat="server"
-                    Text='<%# Bind("description") %>'></asp:Label>
-              </ItemTemplate>
-              <EditItemTemplate>
-                <asp:TextBox ID="txtShortDescription" runat="server" 
-                    Text='<%# Bind("description") %>'
-                    Width="200px" MaxLength="200">
-                </asp:TextBox>
-                <asp:RequiredFieldValidator
-                    ID="RequiredFieldValidator4" runat="server" 
-                    ControlToValidate="txtDescription"
-                    ErrorMessage="Description is a required field.">*
-                </asp:RequiredFieldValidator>
-              </EditItemTemplate>
-              <InsertItemTemplate>
-                <asp:TextBox ID="txtDescription" runat="server" 
-                    Text='<%# Bind("description") %>' Width="200px" 
-                    MaxLength="200">
-                </asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator5"
-                    runat="server" ControlToValidate="txtDescription"
-                    ErrorMessage="Description is a required field.">*
-                </asp:RequiredFieldValidator>
-              </InsertItemTemplate>
-              <HeaderStyle HorizontalAlign="Left" Width="130px" />
-              <ItemStyle Width="220px" />
-            </asp:TemplateField>
+                <asp:DetailsView ID="DetailsView1" runat="server"
+                DataSourceID="SqlDataSource2"  DataKeyNames="product_id"
+                Height="50px" Width="100%" AutoGenerateRows="False" 
+                BackColor="Black" BorderColor="White" BorderStyle="Ridge" 
+                BorderWidth="2px" CellPadding="3" CellSpacing="1" 
+                GridLines="None" CSSClass="detailsView"
+                onitemdeleted="DetailsView1_ItemDeleted" 
+                onitemdeleting="DetailsView1_ItemDeleting" 
+                oniteminserted="DetailsView1_ItemInserted" 
+                onitemupdated="DetailsView1_ItemUpdated" CommandRowStyle-CssClass="detailsView" CommandRowStyle-ForeColor="Black">
+                <Fields>
+                    <asp:TemplateField HeaderText="Product ID:">
+                      <ItemTemplate>
+                        <asp:Label ID="Label4" runat="server"
+                            Text='<%# Bind("product_id") %>'></asp:Label>
+                      </ItemTemplate>
+                      <EditItemTemplate>
+                        <asp:Label ID="Label1" runat="server"
+                            Text='<%# Eval("product_id") %>'></asp:Label>
+                      </EditItemTemplate>
+                      <InsertItemTemplate>
+                        <asp:TextBox ID="txtID" runat="server"
+                            Text='<%# Bind("product_id") %>' Width="100px"
+                            MaxLength="10">
+                        </asp:TextBox>
+                        <asp:RequiredFieldValidator
+                            ID="RequiredFieldValidator1" runat="server" 
+                            ControlToValidate="txtID" 
+                            ErrorMessage="Product ID is a required field.">*
+                        </asp:RequiredFieldValidator>
+                      </InsertItemTemplate>
+                      <HeaderStyle HorizontalAlign="Left" Width="130px" />
+                      <ItemStyle Width="220px" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Name:">
+                      <ItemTemplate>
+                        <asp:Label ID="Label8" runat="server"
+                            Text='<%# Bind("product_name") %>'></asp:Label>
+                      </ItemTemplate>
+                      <EditItemTemplate>
+                        <asp:TextBox ID="txtName" runat="server"
+                            Text='<%# Bind("product_name") %>' Width="200px" MaxLength="50">
+                        </asp:TextBox>
+                        <asp:RequiredFieldValidator
+                            ID="RequiredFieldValidator2" runat="server" 
+                            ControlToValidate="txtName" 
+                            ErrorMessage="Name is a required field.">*
+                        </asp:RequiredFieldValidator>
+                      </EditItemTemplate>
+                      <InsertItemTemplate>
+                        <asp:TextBox ID="txtName" runat="server"
+                            Text='<%# Bind("product_name") %>' Width="200px" MaxLength="50">
+                        </asp:TextBox>
+                        <asp:RequiredFieldValidator
+                            ID="RequiredFieldValidator3" runat="server" 
+                            ControlToValidate="txtName"  
+                            ErrorMessage="Name is a required field.">*
+                        </asp:RequiredFieldValidator>
+                      </InsertItemTemplate>
+                      <HeaderStyle HorizontalAlign="Left" Width="130px" />
+                      <ItemStyle Width="220px" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Description:">
+                      <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server"
+                            Text='<%# Bind("description") %>'></asp:Label>
+                      </ItemTemplate>
+                      <EditItemTemplate>
+                        <asp:TextBox ID="txtDescription" runat="server" 
+                            Text='<%# Bind("description") %>'
+                            Width="200px" MaxLength="200">
+                        </asp:TextBox>
+                        <asp:RequiredFieldValidator
+                            ID="RequiredFieldValidator4" runat="server" 
+                            ControlToValidate="txtDescription"
+                            ErrorMessage="Description is a required field.">*
+                        </asp:RequiredFieldValidator>
+                      </EditItemTemplate>
+                      <InsertItemTemplate>
+                        <asp:TextBox ID="txtDescription" runat="server" 
+                            Text='<%# Bind("description") %>' Width="200px" 
+                            MaxLength="200">
+                        </asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5"
+                            runat="server" ControlToValidate="txtDescription"
+                            ErrorMessage="Description is a required field.">*
+                        </asp:RequiredFieldValidator>
+                      </InsertItemTemplate>
+                      <HeaderStyle HorizontalAlign="Left" Width="130px" />
+                      <ItemStyle Width="220px" />
+                    </asp:TemplateField>
             
-            <asp:TemplateField HeaderText="Category:">
-              <ItemTemplate>
-                <asp:Label ID="Label3" runat="server"
-                    Text='<%# Bind("category_id") %>'></asp:Label>
-              </ItemTemplate>
-              <EditItemTemplate>
-                <asp:DropDownList ID="ddlCategory" runat="server"
-                    DataSourceID="SqlDataSource3" 
-                    DataTextField="category_name" DataValueField="category_id" 
-                    SelectedValue='<%# Bind("category_id") %>' Width="130px">
-                </asp:DropDownList>
-              </EditItemTemplate>
-              <InsertItemTemplate>
-                <asp:DropDownList ID="ddlCategory" runat="server"
-                    DataSourceID="SqlDataSource3" 
-                    DataTextField="category_name" DataValueField="category_id" 
-                    SelectedValue='<%# Bind("category_id") %>' Width="130px">
-                </asp:DropDownList>
-              </InsertItemTemplate>
-              <HeaderStyle HorizontalAlign="Left" Width="130px" />
-              <ItemStyle Width="220px" />
-            </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Category:">
+                      <ItemTemplate>
+                        <asp:Label ID="Label3" runat="server"
+                            Text='<%# Bind("category_id") %>'></asp:Label>
+                      </ItemTemplate>
+                      <EditItemTemplate>
+                        <asp:DropDownList ID="ddlCategory" runat="server"
+                            DataSourceID="SqlDataSource3" 
+                            DataTextField="category_name" DataValueField="category_id" 
+                            SelectedValue='<%# Bind("category_id") %>' Width="130px">
+                        </asp:DropDownList>
+                      </EditItemTemplate>
+                      <InsertItemTemplate>
+                        <asp:DropDownList ID="ddlCategory" runat="server"
+                            DataSourceID="SqlDataSource3" 
+                            DataTextField="category_name" DataValueField="category_id" 
+                            SelectedValue='<%# Bind("category_id") %>' Width="130px">
+                        </asp:DropDownList>
+                      </InsertItemTemplate>
+                      <HeaderStyle HorizontalAlign="Left" Width="130px" />
+                      <ItemStyle Width="220px" />
+                    </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="Brand:">
-            <ItemTemplate>
-            <asp:Label ID="Label3" runat="server"
-                Text='<%# Bind("brand_id") %>'></asp:Label>
-            </ItemTemplate>
-            <EditItemTemplate>
-            <asp:DropDownList ID="ddlBrand" runat="server"
-                DataSourceID="SqlDataSource4" 
-                DataTextField="brand_name" DataValueField="brand_id" 
-                SelectedValue='<%# Bind("brand_id") %>' Width="130px">
-            </asp:DropDownList>
-            </EditItemTemplate>
-            <InsertItemTemplate>
-            <asp:DropDownList ID="ddlBrand" runat="server"
-                DataSourceID="SqlDataSource4" 
-                DataTextField="brand_name" DataValueField="brand_id" 
-                SelectedValue='<%# Bind("brand_id") %>' Width="130px">
-            </asp:DropDownList>
-            </InsertItemTemplate>
-            <HeaderStyle HorizontalAlign="Left" Width="130px" />
-            <ItemStyle Width="220px" />
-        </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Brand:">
+                    <ItemTemplate>
+                    <asp:Label ID="Label3" runat="server"
+                        Text='<%# Bind("brand_id") %>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                    <asp:DropDownList ID="ddlBrand" runat="server"
+                        DataSourceID="SqlDataSource4" 
+                        DataTextField="brand_name" DataValueField="brand_id" 
+                        SelectedValue='<%# Bind("brand_id") %>' Width="130px">
+                    </asp:DropDownList>
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                    <asp:DropDownList ID="ddlBrand" runat="server"
+                        DataSourceID="SqlDataSource4" 
+                        DataTextField="brand_name" DataValueField="brand_id" 
+                        SelectedValue='<%# Bind("brand_id") %>' Width="130px">
+                    </asp:DropDownList>
+                    </InsertItemTemplate>
+                    <HeaderStyle HorizontalAlign="Left" Width="130px" />
+                    <ItemStyle Width="220px" />
+                </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="Image:">
-              <ItemTemplate>
-                <asp:Label ID="Label7" runat="server"
-                    Text='<%# Bind("image") %>'></asp:Label>
-              </ItemTemplate>
-              <EditItemTemplate>
-                <asp:TextBox ID="txtImage" runat="server"
-                    Text='<%# Bind("image") %>' Width="125px" MaxLength="30">
-                </asp:TextBox>
-              </EditItemTemplate>
-              <InsertItemTemplate>
-                <asp:TextBox ID="txtImage" runat="server"
-                    Text='<%# Bind("image") %>' Width="125px" MaxLength="30">
-                </asp:TextBox>
-              </InsertItemTemplate>
-              <HeaderStyle HorizontalAlign="Left" Width="130px" />
-              <ItemStyle Width="220px" />
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Price:">
-              <ItemTemplate>
-                <asp:Label ID="Label5" runat="server"
-                    Text='<%# Bind("price", "{0:c}") %>'></asp:Label>
-              </ItemTemplate>
-              <EditItemTemplate>
-                <asp:TextBox ID="txtUnitPrice" runat="server"
-                    Text='<%# Bind("price") %>' Width="75px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator6"
-                    runat="server" ControlToValidate="txtUnitPrice"
-                    ErrorMessage="Unit Price is a required field.">*
-                </asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="CompareValidator1" runat="server" 
-                    ControlToValidate="txtUnitPrice"  
-                    ErrorMessage="Unit Price must be a decimal value
-                    greater than 0." Operator="GreaterThan"
-                    Type="Double" ValueToCompare="0.00">*</asp:CompareValidator>
-              </EditItemTemplate>
-              <InsertItemTemplate>
-                <asp:TextBox ID="txtUnitPrice" runat="server" 
-                    Text='<%# Bind("price") %>' Width="75px">
-                </asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator7"
-                    runat="server" ControlToValidate="txtUnitPrice"
-                    ErrorMessage="Unit Price is a required field.">*
-                </asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="CompareValidator2" runat="server" 
-                    ControlToValidate="txtUnitPrice" 
-                    ErrorMessage="Unit price must be a decimal value
-                    greater than 0." Operator="GreaterThan"
-                    Type="Double" ValueToCompare="0">*</asp:CompareValidator>
-              </InsertItemTemplate>
-              <HeaderStyle HorizontalAlign="Left" Width="130px" />
-              <ItemStyle Width="220px" />
-            </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Image:">
+                      <ItemTemplate>
+                        <asp:Label ID="Label7" runat="server"
+                            Text='<%# Bind("image") %>'></asp:Label>
+                      </ItemTemplate>
+                      <EditItemTemplate>
+                        <asp:TextBox ID="txtImage" runat="server"
+                            Text='<%# Bind("image") %>' Width="125px" MaxLength="30">
+                        </asp:TextBox>
+                      </EditItemTemplate>
+                      <InsertItemTemplate>
+                        <asp:TextBox ID="txtImage" runat="server"
+                            Text='<%# Bind("image") %>' Width="125px" MaxLength="30">
+                        </asp:TextBox>
+                      </InsertItemTemplate>
+                      <HeaderStyle HorizontalAlign="Left" Width="130px" />
+                      <ItemStyle Width="220px" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Price:">
+                      <ItemTemplate>
+                        <asp:Label ID="Label5" runat="server"
+                            Text='<%# Bind("price", "{0:c}") %>'></asp:Label>
+                      </ItemTemplate>
+                      <EditItemTemplate>
+                        <asp:TextBox ID="txtUnitPrice" runat="server"
+                            Text='<%# Bind("price") %>' Width="75px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6"
+                            runat="server" ControlToValidate="txtUnitPrice"
+                            ErrorMessage="Unit Price is a required field.">*
+                        </asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                            ControlToValidate="txtUnitPrice"  
+                            ErrorMessage="Unit Price must be a decimal value
+                            greater than 0." Operator="GreaterThan"
+                            Type="Double" ValueToCompare="0.00">*</asp:CompareValidator>
+                      </EditItemTemplate>
+                      <InsertItemTemplate>
+                        <asp:TextBox ID="txtUnitPrice" runat="server" 
+                            Text='<%# Bind("price") %>' Width="75px">
+                        </asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7"
+                            runat="server" ControlToValidate="txtUnitPrice"
+                            ErrorMessage="Unit Price is a required field.">*
+                        </asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="CompareValidator2" runat="server" 
+                            ControlToValidate="txtUnitPrice" 
+                            ErrorMessage="Unit price must be a decimal value
+                            greater than 0." Operator="GreaterThan"
+                            Type="Double" ValueToCompare="0">*</asp:CompareValidator>
+                      </InsertItemTemplate>
+                      <HeaderStyle HorizontalAlign="Left" Width="130px" />
+                      <ItemStyle Width="220px" />
+                    </asp:TemplateField>
 
-               <asp:TemplateField HeaderText="Weight:">
-              <ItemTemplate>
-                <asp:Label ID="Label5" runat="server"
-                    Text='<%# Bind("weight") %>'></asp:Label>
-              </ItemTemplate>
-              <EditItemTemplate>
-                <asp:TextBox ID="txtWeight" runat="server"
-                    Text='<%# Bind("weight") %>' Width="75px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator8"
-                    runat="server" ControlToValidate="txtWeight"
-                    ErrorMessage="Weight is a required field.">*
-                </asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="CompareValidator3" runat="server" 
-                    ControlToValidate="txtWeight"  
-                    ErrorMessage="Weight must be a decimal value
-                    greater than 0." Operator="GreaterThan"
-                    Type="Double" ValueToCompare="0.00">*</asp:CompareValidator>
-              </EditItemTemplate>
-              <InsertItemTemplate>
-                <asp:TextBox ID="txtWeight" runat="server" 
-                    Text='<%# Bind("weight") %>' Width="75px">
-                </asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator9"
-                    runat="server" ControlToValidate="txtWeight"
-                    ErrorMessage="Weight is a required field.">*
-                </asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="CompareValidator4" runat="server" 
-                    ControlToValidate="txtWeight" 
-                    ErrorMessage="Weight must be a decimal value
-                    greater than 0." Operator="GreaterThan"
-                    Type="Double" ValueToCompare="0">*</asp:CompareValidator>
-              </InsertItemTemplate>
-              <HeaderStyle HorizontalAlign="Left" Width="130px" />
-              <ItemStyle Width="220px" />
-            </asp:TemplateField>
+                       <asp:TemplateField HeaderText="Weight:">
+                      <ItemTemplate>
+                        <asp:Label ID="Label5" runat="server"
+                            Text='<%# Bind("weight") %>'></asp:Label>
+                      </ItemTemplate>
+                      <EditItemTemplate>
+                        <asp:TextBox ID="txtWeight" runat="server"
+                            Text='<%# Bind("weight") %>' Width="75px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8"
+                            runat="server" ControlToValidate="txtWeight"
+                            ErrorMessage="Weight is a required field.">*
+                        </asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="CompareValidator3" runat="server" 
+                            ControlToValidate="txtWeight"  
+                            ErrorMessage="Weight must be a decimal value
+                            greater than 0." Operator="GreaterThan"
+                            Type="Double" ValueToCompare="0.00">*</asp:CompareValidator>
+                      </EditItemTemplate>
+                      <InsertItemTemplate>
+                        <asp:TextBox ID="txtWeight" runat="server" 
+                            Text='<%# Bind("weight") %>' Width="75px">
+                        </asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9"
+                            runat="server" ControlToValidate="txtWeight"
+                            ErrorMessage="Weight is a required field.">*
+                        </asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="CompareValidator4" runat="server" 
+                            ControlToValidate="txtWeight" 
+                            ErrorMessage="Weight must be a decimal value
+                            greater than 0." Operator="GreaterThan"
+                            Type="Double" ValueToCompare="0">*</asp:CompareValidator>
+                      </InsertItemTemplate>
+                      <HeaderStyle HorizontalAlign="Left" Width="130px" />
+                      <ItemStyle Width="220px" />
+                    </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="On Hand:">
-              <ItemTemplate>
-                <asp:Label ID="Label6" runat="server"
-                    Text='<%# Bind("prod_on_hand") %>'></asp:Label>
-              </ItemTemplate>
-              <EditItemTemplate>
-                <asp:TextBox ID="txtOnHand" runat="server"
-                    Text='<%# Bind("prod_on_hand") %>' Width="75px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator10"
-                    runat="server" ControlToValidate="txtOnHand"
-                    ErrorMessage="On Hand is a required field.">*
-                </asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="CompareValidator5" runat="server" 
-                    ControlToValidate="txtOnHand" 
-                    ErrorMessage="On Hand must be a positive integer."
-                    Operator="GreaterThanEqual"
-                    Type="Integer" ValueToCompare="0">*</asp:CompareValidator>
-              </EditItemTemplate>
-              <InsertItemTemplate>
-                <asp:TextBox ID="txtOnHand" runat="server"
-                    Text='<%# Bind("prod_on_hand") %>' Width="75px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator11"
-                    runat="server" ControlToValidate="txtOnHand"
-                    ErrorMessage="On Hand is a required field.">*
-                </asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="CompareValidator6" runat="server" 
-                    ControlToValidate="txtOnHand" 
-                    ErrorMessage="On Hand must be a positive integer."
-                    Operator="GreaterThanEqual"
-                    Type="Integer" ValueToCompare="0">*</asp:CompareValidator>
-              </InsertItemTemplate>
-              <HeaderStyle HorizontalAlign="Left" Width="130px" />
-              <ItemStyle Width="220px" />
-            </asp:TemplateField>
-            <asp:CommandField ButtonType="Button" 
-                ShowDeleteButton="True" 
-                ShowEditButton="True"
-                ShowInsertButton="True" />
-          </Fields>
-          <RowStyle BackColor="LightGray" ForeColor="Black" />
-          <EditRowStyle BackColor="Gray" ForeColor="White" />
-          <FooterStyle BackColor="LightGray" />
+                    <asp:TemplateField HeaderText="On Hand:">
+                      <ItemTemplate>
+                        <asp:Label ID="Label6" runat="server"
+                            Text='<%# Bind("prod_on_hand") %>'></asp:Label>
+                      </ItemTemplate>
+                      <EditItemTemplate>
+                        <asp:TextBox ID="txtOnHand" runat="server"
+                            Text='<%# Bind("prod_on_hand") %>' Width="75px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10"
+                            runat="server" ControlToValidate="txtOnHand"
+                            ErrorMessage="On Hand is a required field.">*
+                        </asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="CompareValidator5" runat="server" 
+                            ControlToValidate="txtOnHand" 
+                            ErrorMessage="On Hand must be a positive integer."
+                            Operator="GreaterThanEqual"
+                            Type="Integer" ValueToCompare="0">*</asp:CompareValidator>
+                      </EditItemTemplate>
+                      <InsertItemTemplate>
+                        <asp:TextBox ID="txtOnHand" runat="server"
+                            Text='<%# Bind("prod_on_hand") %>' Width="75px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator11"
+                            runat="server" ControlToValidate="txtOnHand"
+                            ErrorMessage="On Hand is a required field.">*
+                        </asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="CompareValidator6" runat="server" 
+                            ControlToValidate="txtOnHand" 
+                            ErrorMessage="On Hand must be a positive integer."
+                            Operator="GreaterThanEqual"
+                            Type="Integer" ValueToCompare="0">*</asp:CompareValidator>
+                      </InsertItemTemplate>
+                      <HeaderStyle HorizontalAlign="Left" Width="130px" />
+                      <ItemStyle Width="220px" />
+                    </asp:TemplateField>
+                    <asp:CommandField ButtonType="Button" 
+                        ShowDeleteButton="True" 
+                        ShowEditButton="True"
+                        ShowInsertButton="True" />
+              </Fields>
+              <RowStyle BackColor="LightGray" ForeColor="Black" />
+              <EditRowStyle BackColor="Gray" ForeColor="Black" />
+              <FooterStyle BackColor="LightGray" />
         </asp:DetailsView>
             </div>
         </div>
