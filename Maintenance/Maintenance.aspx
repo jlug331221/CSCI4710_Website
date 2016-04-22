@@ -11,14 +11,14 @@
     <form id="form1" runat="server">
     <div id="page">
         <div id="main">
-            <h1>The Halloween Store - Maintenance</h1>
+            <h1>East Coast Jeeps - Maintenance</h1>
             <p>
             <asp:HyperLink ID="HyperLink1" runat="server" 
                     NavigateUrl="UnderConstruction.aspx">Maintain Categories</asp:HyperLink>
             </p>
             <p>
                 <asp:HyperLink ID="HyperLink2" runat="server" 
-                    NavigateUrl="UnderConstruction.aspx">Maintain Products</asp:HyperLink>
+                    NavigateUrl="ProductsMaintenance.aspx">Maintain Products</asp:HyperLink>
             </p>
             <p>
                 <asp:LoginName ID="LoginName1" runat="server" 

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMasterPage.master" AutoEventWireup="true" CodeFile="OrderVerificationPage.aspx.cs" Inherits="VerificationPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <link href="CSS/OrderVerification.css" rel="stylesheet" />
+    <link href="../CSS/OrderVerification.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -58,6 +58,75 @@
                         <h2>
                             Exp Date: <asp:Label ID="lblCCExpMonth" runat="server" CssClass="label_text"></asp:Label> 
                             | <asp:Label ID="lblCCExpYear" runat="server" CssClass="label_text"></asp:Label>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <br /><br />
+
+            <div class="col-xs-12">
+                <hr />
+                <h2>Shipping Information</h2>
+            </div>
+
+            <div class="col-xs-12 col-md-12">
+                <div class="row">
+                    <div class="col-xs-2 col-md-1">
+                        <h2><i class="fa fa-map-marker" aria-hidden="true"></i></h2>
+                    </div>
+                    <div class="col-xs-10 col-md-11">
+                        <h2>
+                            Street: <asp:Label ID="lblInputStreetFromChkOutPage" 
+                                        runat="server" CssClass="label_text"></asp:Label>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <br /><br />
+
+            <div class="col-xs-12 col-md-12">
+                <div class="row">
+                    <div class="col-xs-2 col-md-1">
+                        <h2><i class="fa fa-map-marker" aria-hidden="true"></i></h2>
+                    </div>
+                    <div class="col-xs-10 col-md-11">
+                        <h2>
+                            City: <asp:Label ID="lblInputCityFromChkOutPage" 
+                                        runat="server" CssClass="label_text"></asp:Label>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <br /><br />
+
+            <div class="col-xs-12 col-md-12">
+                <div class="row">
+                    <div class="col-xs-2 col-md-1">
+                        <h2><i class="fa fa-map-marker" aria-hidden="true"></i></h2>
+                    </div>
+                    <div class="col-xs-10 col-md-11">
+                        <h2>
+                            State: <asp:Label ID="lblSelectStateFromChkOutPage" 
+                                        runat="server" CssClass="label_text"></asp:Label>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <br /><br />
+
+            <div class="col-xs-12 col-md-12">
+                <div class="row">
+                    <div class="col-xs-2 col-md-1">
+                        <h2><i class="fa fa-map-marker" aria-hidden="true"></i></h2>
+                    </div>
+                    <div class="col-xs-10 col-md-11">
+                        <h2>
+                            Zip Code: <asp:Label ID="lblZipCodeFromChkOutPage" 
+                                        runat="server" CssClass="label_text"></asp:Label>
                         </h2>
                     </div>
                 </div>

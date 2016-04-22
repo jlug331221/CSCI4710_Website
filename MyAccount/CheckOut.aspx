@@ -272,14 +272,14 @@
                             <br />
                             <div class="form-group">
                                 <div class="col-xs-12 col-md-1 col-md-offset-2">
-                                    <asp:Button ID="btnContinue" runat="server"
+                                    <asp:Button ID="btnBackToShoppinCart" runat="server"
                                         class="btn btn-default back_to_shoppingcart_btn"
                                         Text="Back to Shopping Cart" PostBackUrl="~/Cart.aspx"></asp:Button>
                                 </div>
                                 <div class="col-xs-12 col-md-1 col-md-offset-3">
                                     <asp:Button ID="btnConfirmOrder" runat="server"
                                         class="btn btn-primary confirm_order_btn"
-                                        Text="Confirm Order" PostBackUrl="~/OrderVerificationPage.aspx" 
+                                        Text="Confirm Order" PostBackUrl="~/MyAccount/OrderVerificationPage.aspx" 
                                         CssClass="btn btn-primary CheckOut_confirm_order_btn"
                                         ValidationGroup="confirm_order">
                                     </asp:Button>
