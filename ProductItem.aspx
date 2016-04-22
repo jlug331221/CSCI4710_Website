@@ -41,7 +41,7 @@
                 <div>
                     <div class="center-block quantity"></div>
                         <asp:Label ID="lblQuantity" runat="server" Text="Enter Quantity"></asp:Label>
-                        <asp:TextBox ID="txtQuantity" runat="server"  Width="40px" ValidationGroup="quantity" CssClass="txtQuantity"></asp:TextBox>&nbsp;
+                        <asp:TextBox ID="txtQuantity" runat="server"  Width="40px" ValidationGroup="quantity" CssClass="txtQuantity">1</asp:TextBox>&nbsp;
                         <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btn btn-info" OnClick="btnAddToCart_Click" />
                         <br />
                         <asp:Label ID="lblQtyAlmostOut" runat="server" Text="Label"

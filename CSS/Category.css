@@ -1,3 +1,5 @@
 ﻿.shopLabel {
-    font-size:large;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
 }

@@ -28,13 +28,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/Default.aspx">Brand</a>
+                    <a class="navbar-brand" href="/Default.aspx">East Coast Jeeps</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="Contact.aspx">Contact Us</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -54,13 +54,13 @@
 
     
         <div class="container-fluid" id="page_content">
-            <div class="row">
-                <div class="col-xs-12 col-md-3">
+            <div class="row sidebar">
+                <div class="col-xs-12 col-md-3 sidebarSpacer">
                     <div class="sidebar-nav">
                         <span id="sidebar_title"
                             data-toggle="collapse"
                             data-target="#collapse_sidebar_items">
-                            Shop for Jeep* Products
+                            Shop Jeep* Products
                         </span>
                         <div class="collapse navbar-collapse" id="collapse_sidebar_items">
                             <ul class="nav nav-list" id="sidebar_items">
@@ -126,11 +126,11 @@
                 as well as prior purchases and returns.
                 <br />
                             <br />
-                            ©2016 <i><b>[INSERT NAME HERE]</b></i> This entire site with its content and parts is copyright protected.
+                            ©2016 <b>East Coast Jeeps</b> This entire site with its content and parts is copyright protected.
                 <br />
                             <br />
                             *Jeep, Wrangler, Rubicon, Renegade, CJ and the Jeep Grille Design are registered trademarks of FCA 
-                (Fiat Chrysler Automobiles). <i><b>[INSERT NAME HERE]</b></i>, has no affiliation with FCA. Throughout this website 
+                (Fiat Chrysler Automobiles). <b>East Coast Jeeps</b>, has no affiliation with FCA. Throughout this website 
                 and catalog the terms Jeep, Wrangler, MOPAR®, & Rubicon are used for identification purposes only. It is not implied 
                 that any part listed is a product of, or approved by Fiat Chrysler Automobiles.
                 <br />
