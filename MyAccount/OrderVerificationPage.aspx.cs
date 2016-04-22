@@ -37,6 +37,14 @@ public partial class VerificationPage : System.Web.UI.Page
                 .FindControl("inputName");
             TextBox txtCCNumber = (TextBox)checkOutPageContentHolder
                 .FindControl("inputCCNumber");
+            TextBox txtShippingStreet = (TextBox)checkOutPageContentHolder
+                .FindControl("inputStreet");
+            TextBox txtShippingCity = (TextBox)checkOutPageContentHolder
+                .FindControl("inputCity");
+            TextBox txtZipCode = (TextBox)checkOutPageContentHolder
+                .FindControl("inputZipCode");
+            DropDownList ddlSelectedState = (DropDownList)checkOutPageContentHolder
+                .FindControl("ddlStates");
             DropDownList ddlShippingMethod = (DropDownList)checkOutPageContentHolder
                 .FindControl("ddlMailDelivery");
             DropDownList ddlCCExpMonth = (DropDownList)checkOutPageContentHolder
@@ -47,6 +55,10 @@ public partial class VerificationPage : System.Web.UI.Page
             lblInputNameFromChkOutPage.Text = txtName.Text;
             lblInputCCNumberFromChkOutPage.Text = "XXXX-XXXX-XXXX-" + 
                 txtCCNumber.Text.Substring(12);
+            lblInputStreetFromChkOutPage.Text = txtShippingStreet.Text.ToString();
+            lblInputCityFromChkOutPage.Text = txtShippingCity.Text.ToString();
+            lblSelectStateFromChkOutPage.Text = ddlSelectedState.Text.ToString();
+            lblZipCodeFromChkOutPage.Text = txtZipCode.Text.ToString();
             lblSelectedShipping.Text = ddlShippingMethod.Text.ToString();
             lblCCExpMonth.Text = ddlCCExpMonth.Text.ToString();
             lblCCExpYear.Text = ddlCCExpYear.Text.ToString();
