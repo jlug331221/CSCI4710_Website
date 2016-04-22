@@ -18,7 +18,8 @@
                 <asp:Label ID="lblShopName" runat="server" Text="Shop Name" CssClass="shopLabel"></asp:Label>
                 <br />
                 <br />
-
+                <div class="row">
+                <div class="col-mid-12 col-md-offset-1">
                 <asp:SqlDataSource ID="CategoryDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [category_id], [category_name], [shop_id] FROM [Category] WHERE ([shop_id] = @shop_id)">
                     <SelectParameters>
                         <asp:QueryStringParameter Name="shop_id" QueryStringField="shop_id" Type="Int32" />
@@ -32,6 +33,8 @@
                          <br />
                     </ItemTemplate>
                 </asp:DataList>
+                </div>
+                    </div>
             </div>
         </div>
     </div>

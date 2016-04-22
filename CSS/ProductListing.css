@@ -1,5 +1,12 @@
 ﻿.listingLabel {
-    font-size:large;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.listingLabel1 {
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .productListingLink {

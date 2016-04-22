@@ -9,7 +9,7 @@
             <div class="col-md-9">
                 <h1>Welcome</h1>
                 <p>
-                    Unlike your regular corprate website that sells you what you need we here at <i><b>[INSERT NAME HERE]</b></i> do not just want to be the place that you come to
+                    Unlike your regular corprate website that sells you what you need we here at <b>East Coast Jeeps</b> do not just want to be the place that you come to
         when you need a part that you can't find elsewhere, which we will have.  But we want to be a place that has a thriving community that lets us connect other fellow
         Jeep owners in your area together with local events that we sponsor in certain areas.
                 </p>
@@ -43,15 +43,15 @@
                 </div>
             </div>
             <div class="col-md-3 hidden-sm">
-                <img src="Images/Brands/Alloy.jpg" class="imgAds"/>
-                <img src="Images/Brands/ARB.jpg" class="imgAds"/>
-                <img src="Images/Brands/bestop.jpg" class="imgAds"/>
-                <img src="Images/Brands/bushwacker.jpg" class="imgAds"/>
-                <img src="Images/Brands/Corbeau.jpg" class="imgAds"/>
-                <img src="Images/Brands/Mopar.jpg" class="imgAds"/>
-                <img src="Images/Brands/rugged-ridge.png" class="imgAds"/>
-                <img src="Images/Brands/skyjacker.jpg" class="imgAds"/>
-                <img src="Images/Brands/tuffy.jpg" class="imgAds"/>
+               <a href="http://www.alloyusa.com" target="_blank"> <img src="Images/Brands/Alloy.jpg" class="imgAds"/></a>
+               <a href="http://www.arbusa.com/" target="_blank"> <img src="Images/Brands/ARB.jpg" class="imgAds"/></a>
+                <a href="http://www.bestop.com/" target="_blank"><img src="Images/Brands/bestop.jpg" class="imgAds"/></a>
+                <a href="http://www.bushwacker.com/" target="_blank"><img src="Images/Brands/bushwacker.jpg" class="imgAds"/></a>
+                <a href="https://corbeau.com/" target="_blank"><img src="Images/Brands/Corbeau.jpg" class="imgAds"/></a>
+                <a href="http://www.mopar.com/" target="_blank"><img src="Images/Brands/Mopar.jpg" class="imgAds"/></a>
+                <a href="http://www.ruggedridge.com/" target="_blank"><img src="Images/Brands/rugged-ridge.png" class="imgAds"/></a>
+                <a href="http://skyjacker.com/" target="_blank"><img src="Images/Brands/skyjacker.jpg" class="imgAds"/></a>
+                <a href="http://www.tuffyproducts.com/" target="_blank"><img src="Images/Brands/tuffy.jpg" class="imgAds"/></a>
             </div>
         </div>
     </div>

@@ -4281,9 +4281,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   padding: 19.5px 15px;
-  font-size: 19px;
+  padding-right: 35px;
+  font-size: 30px;
   line-height: 21px;
   height: 60px;
+  padding-bottom: 50px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -7090,8 +7092,8 @@ a:hover{
 
 #sidebar_title {
     color: #FFFFFF;
-    margin-left: 20px;
-    font-size: 150%;
+    margin-left: 35px;
+    font-size: 130%;
 }
 
 @media (min-width:1200px) {
