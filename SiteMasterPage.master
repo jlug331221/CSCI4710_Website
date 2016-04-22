@@ -33,8 +33,10 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">About</a></li>
                         <li><a href="Contact.aspx">Contact Us</a></li>
+                        <% if (Page.User.IsInRole("admin")) { %>
+                            <li><a href="#">Admin Dashboard</a></li>
+                        <% } %>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -46,7 +48,11 @@
                             </a>
                         </li>
                         <li><asp:LoginStatus ID="LoginStatus1" runat="server" /></li>
-                        <li><a href="CreateUser.aspx">Sign Up</a></li>
+                        <% if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated){ %>
+                            <li><a href="MyAccount/MyAccount.aspx">My Account</a></li>
+                        <% } else { %>
+                            <li><a href="CreateUser.aspx">Sign Up</a></li>
+                        <% } %>
                     </ul>
                 </div>
             </div>
@@ -75,7 +81,7 @@
                                         Font-Underline="False" />
                                     <ItemTemplate>
                                         <asp:HyperLink ID="sideHyperLink" runat="server" 
-                                            NavigateUrl=' <%# "Category.aspx?shop_id=" + Eval("shop_id") %>' 
+                                            NavigateUrl='<%# "Category.aspx?shop_id=" + Eval("shop_id") %>' 
                                             Text='<%# Eval("shop_name") %>' 
                                             CssClass="sideLink">
                                         </asp:HyperLink>
