@@ -9,6 +9,11 @@ public partial class Maintenance_ProductsMaintenance : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if(IsPostBack)
+        {
+            GridView1.DataBind();
+            //DetailsView1.DataBind();
+        }
     }
 
     protected void DetailsView1_ItemUpdated(

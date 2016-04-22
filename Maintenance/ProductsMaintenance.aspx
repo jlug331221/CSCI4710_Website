@@ -335,7 +335,7 @@
             DeleteCommand="DELETE FROM [Product] WHERE [product_id] = @original_product_id AND [product_name] = @original_product_name AND [price] = @original_price AND [prod_on_hand] = @original_prod_on_hand AND [brand_id] = @original_brand_id AND [description] = @original_description AND [image] = @original_image AND [category_id] = @original_category_id AND [weight] = @original_weight" 
             InsertCommand="INSERT INTO [Product] ([product_name], [price], [prod_on_hand], [brand_id], [description], [image], [category_id], [weight]) VALUES (@product_name, @price, @prod_on_hand, @brand_id, @description, @image, @category_id, @weight)" 
             OldValuesParameterFormatString="original_{0}" 
-            SelectCommand="SELECT [product_id], [product_name], [price], [prod_on_hand], [brand_id], [description], [image], [category_id], [weight] FROM [Product]" 
+            SelectCommand="SELECT [product_id], [product_name], [price], [prod_on_hand], [brand_id], [description], [image], [category_id], [weight] FROM [Product] WHERE([product_id] = @product_id)" 
             UpdateCommand="UPDATE [Product] SET [product_name] = @product_name, [price] = @price, [prod_on_hand] = @prod_on_hand, [brand_id] = @brand_id, [description] = @description, [image] = @image, [category_id] = @category_id, [weight] = @weight WHERE [product_id] = @original_product_id AND [product_name] = @original_product_name AND [price] = @original_price AND [prod_on_hand] = @original_prod_on_hand AND [brand_id] = @original_brand_id AND [description] = @original_description AND [image] = @original_image AND [category_id] = @original_category_id AND [weight] = @original_weight">
             <DeleteParameters>
                 <asp:Parameter Name="original_product_id" Type="Int32" />
@@ -358,6 +358,10 @@
                 <asp:Parameter Name="category_id" Type="Int32" />
                 <asp:Parameter Name="weight" Type="Double" />
             </InsertParameters>
+            <SelectParameters>
+                  <asp:ControlParameter ControlID="GridView1" Name="product_id" 
+                      PropertyName="SelectedValue" Type="String" />
+              </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="product_name" Type="String" />
                 <asp:Parameter Name="price" Type="Decimal" />
