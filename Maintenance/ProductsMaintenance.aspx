@@ -383,8 +383,12 @@
                 <asp:Parameter Name="original_weight" Type="Double" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [category_id], [category_name] FROM [Category]"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [brand_id], [brand_name] FROM [Brand]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            SelectCommand="SELECT [category_id], [category_name] FROM [Category]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource4" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            SelectCommand="SELECT [brand_id], [brand_name] FROM [Brand]"></asp:SqlDataSource>
     
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
           HeaderText="Please correct the following errors:" CssClass="error" />

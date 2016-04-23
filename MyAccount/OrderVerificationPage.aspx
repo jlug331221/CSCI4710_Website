@@ -16,6 +16,10 @@
 
         <div class="row">
 
+            <div class="col-xs-12">
+                <h2>Credit Card Information</h2>
+            </div>
+
             <div class="col-xs-12 col-md-12">
                 <div class="row">
                     <div class="col-xs-2 col-md-1">
@@ -164,6 +168,10 @@
 
             <div class="col-xs-12 col-md-12"><hr /></div>
 
+            <div class="col-xs-12">
+                <h2>Cost Information</h2>
+            </div>
+
             <div class="col-xs-12 col-md-12">
                 <div class="row">
                     <div class="col-xs-2 col-md-1">
@@ -263,7 +271,26 @@
                 <asp:Parameter Name="product_id" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConflictDetection="CompareAllValues" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            InsertCommand="INSERT INTO [Invoice] ([invoice_date], [subtotal], [shipping_method], [shipping_cost], [sales_tax], [total], [credit_card_number], [card_exp_month], [UserId], [card_exp_year]) VALUES (@invoice_date, @subtotal, @shipping_method, @shipping_cost, @sales_tax, @total, @credit_card_number, @card_exp_month, @UserId, @card_exp_year)">    
+            <InsertParameters>
+                <asp:Parameter Name="invoice_date" Type="DateTime" />
+                <asp:Parameter Name="subtotal" Type="Decimal" />
+                <asp:Parameter Name="shipping_method" Type="String" />
+                <asp:Parameter Name="shipping_cost" Type="Decimal" />
+                <asp:Parameter Name="sales_tax" Type="Decimal" />
+                <asp:Parameter Name="total" Type="Decimal" />
+                <asp:Parameter Name="credit_card_number" Type="String" />
+                <asp:Parameter Name="card_exp_month" Type="String" />
+                <asp:Parameter Name="UserId" />
+                <asp:Parameter Name="card_exp_year" Type="String" />
+            </InsertParameters>
+        </asp:SqlDataSource>
+        <asp:Label ID="CCNumberWithoutDashes" runat="server" Text="Label" Visible="False"></asp:Label>
     </div>
+    
 </asp:Content>
 

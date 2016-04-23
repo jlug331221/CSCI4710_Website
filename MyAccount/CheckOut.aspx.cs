@@ -4,15 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
 
 public partial class CheckOut : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        /*if (!Request.IsSecureConnection)
+        if (!Request.IsSecureConnection)
         {
-            string url = Request.Url.ToString().Replace("http:", "https:");
+            string url = "https:" + ConfigurationManager.AppSettings["AppPath"]
+                + "MyAccount/CheckOut.aspx";
             Response.Redirect(url);
-        }*/
+        }
     }
 }
