@@ -16,11 +16,5 @@ public partial class OrderPlaced : System.Web.UI.Page
                 + "OrderPlaced.aspx";
             Response.Redirect(url);
         }
-
-        if (PreviousPage != null)
-        {
-            ContentPlaceHolder orderVerificationPageContentHolder = (ContentPlaceHolder)Page
-            .PreviousPage.Form.FindControl("ContentPlaceHolder1");
-        }
     }
 }

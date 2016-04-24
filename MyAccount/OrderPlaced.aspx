@@ -9,17 +9,6 @@
                 <h1>Thank you for your order!</h1>
             </div>
         </div>
-
-        <hr />
-
-        <div class="row">
-            <div class="col-xs-12 col-md-12">
-                <h2>Shipping to the following address</h2>
-                <asp:Label ID="lblAddressFromOrderVerificationPage" runat="server"
-                    CSSClass="label_text"></asp:Label>
-            </div>
-        </div>
-
     </div>
 </asp:Content>
 

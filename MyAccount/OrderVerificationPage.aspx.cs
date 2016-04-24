@@ -25,6 +25,10 @@ public partial class VerificationPage : System.Web.UI.Page
     private decimal shippingCost = 0.0m;
     private decimal total = 0.0m;
 
+    private string invoiceNumber = "";
+
+    private MembershipUser CurrentUser = Membership.GetUser();
+
     protected void Page_Load(object sender, EventArgs e)
     {
         cartItems = CartItemList.GetCart();
@@ -61,8 +65,7 @@ public partial class VerificationPage : System.Web.UI.Page
                 .FindControl("ddlSelectExpYear");
             
             lblInputNameFromChkOutPage.Text = txtName.Text;
-
-            CCNumberWithoutDashes.Text = txtCCNumber.Text.ToString();
+            
             lblInputCCNumberFromChkOutPage.Text = "XXXX-XXXX-XXXX-" + 
                 txtCCNumber.Text.Substring(12);
 
@@ -119,6 +122,8 @@ public partial class VerificationPage : System.Web.UI.Page
     protected void btnSubmitOrder_Click(object sender, EventArgs e)
     {
         this.putInvoice();
+        this.getInvoiceNumber();
+        this.putLineItems();
 
         this.decrementOnHandQuantity();
 
@@ -139,7 +144,6 @@ public partial class VerificationPage : System.Web.UI.Page
             
             SQLUpdateDataSource.UpdateParameters["product_id"].DefaultValue
                 = cartItemProductId.ToString();
-            
             SQLUpdateDataSource.UpdateParameters["prod_on_hand"].DefaultValue
                 = newOnHandQuantity.ToString();
             SQLUpdateDataSource.Update();
@@ -200,11 +204,28 @@ public partial class VerificationPage : System.Web.UI.Page
         SqlDataSource1.InsertParameters["total"].DefaultValue = (sT + t).ToString();
         SqlDataSource1.InsertParameters["credit_card_number"].DefaultValue = lblInputCCNumberFromChkOutPage.Text.ToString();
         SqlDataSource1.InsertParameters["card_exp_month"].DefaultValue = lblCCExpMonth.Text.ToString();
-        MembershipUser CurrentUser = Membership.GetUser();
         SqlDataSource1.InsertParameters["UserId"].DefaultValue = CurrentUser.ProviderUserKey.ToString();
-
         SqlDataSource1.InsertParameters["card_exp_year"].DefaultValue = lblCCExpYear.Text.ToString();
         SqlDataSource1.Insert();
-        
+    }
+
+    private void getInvoiceNumber()
+    {
+        SqlDataSource2.SelectParameters["UserId"].DefaultValue = CurrentUser.ProviderUserKey.ToString();
+        DataView dvInvoice = (DataView)SqlDataSource2.Select(DataSourceSelectArguments.Empty);
+        invoiceNumber = dvInvoice[0][0].ToString();
+    }
+
+    private void putLineItems()
+    {
+        for(int i = 0; i < cartItems.Count; i++)
+        {
+            CartItem cI = cartItems[i];
+            SqlDataSource3.InsertParameters["invoice_id"].DefaultValue = invoiceNumber;
+            SqlDataSource3.InsertParameters["product_id"].DefaultValue = cI.Product.ProductID.ToString();
+            SqlDataSource3.InsertParameters["line_units"].DefaultValue = cI.Quantity.ToString();
+            SqlDataSource3.InsertParameters["line_price"].DefaultValue = cI.Product.UnitPrice.ToString();
+            SqlDataSource3.Insert();
+        }
     }
 }

@@ -289,7 +289,27 @@
                 <asp:Parameter Name="card_exp_year" Type="String" />
             </InsertParameters>
         </asp:SqlDataSource>
-        <asp:Label ID="CCNumberWithoutDashes" runat="server" Text="Label" Visible="False"></asp:Label>
+
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            SelectCommand="SELECT MAX([invoice_id]) FROM [Invoice] WHERE ([UserId] = @UserId)">
+            <SelectParameters>
+                <asp:Parameter Name="UserId" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
+            ConflictDetection="CompareAllValues" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            InsertCommand="INSERT INTO [Line] ([invoice_id], [product_id], [line_units], [line_price]) VALUES (@invoice_id, @product_id, @line_units, @line_price)">
+            
+            <InsertParameters>
+                <asp:Parameter Name="invoice_id" Type="Int32" />
+                <asp:Parameter Name="product_id" Type="Int32" />
+                <asp:Parameter Name="line_units" Type="Int32" />
+                <asp:Parameter Name="line_price" Type="Decimal" />
+            </InsertParameters>
+        </asp:SqlDataSource>
     </div>
     
 </asp:Content>
