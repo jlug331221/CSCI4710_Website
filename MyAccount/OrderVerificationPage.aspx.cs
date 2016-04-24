@@ -80,12 +80,15 @@ public partial class VerificationPage : System.Web.UI.Page
             additionalWeightCostInShipping = calculateAdditionalWeightCostInShipping();
 
             shippingCost = calculateShippingCost(ddlShippingMethod.Text.ToString());
+            Session.Add("sC", shippingCost);
             lblShippingCost.Text = shippingCost.ToString("c");
 
             subTotal = calculateSubTotal();
+            Session.Add("sT", subTotal);
             lblSubtotal.Text = subTotal.ToString("c");
 
             tax = calculateTax();
+            Session.Add("tax", tax);
             lblTax.Text = tax.ToString("c");
 
             lblTotal.Text = (subTotal + tax).ToString("c");
@@ -185,16 +188,18 @@ public partial class VerificationPage : System.Web.UI.Page
 
     private void putInvoice()
     {
+        decimal sC = (decimal)Session["sC"];
+        decimal sT = (decimal)Session["sT"];
+        decimal t = (decimal)Session["tax"];
+
         SqlDataSource1.InsertParameters["invoice_date"].DefaultValue = DateTime.Today.ToString();
-        
-        SqlDataSource1.InsertParameters["subtotal"].DefaultValue = shippingCost.ToString();
+        SqlDataSource1.InsertParameters["subtotal"].DefaultValue = sT.ToString();
         SqlDataSource1.InsertParameters["shipping_method"].DefaultValue = lblSelectedShipping.Text.ToString();
-        SqlDataSource1.InsertParameters["shipping_cost"].DefaultValue = shippingCost.ToString();
-        SqlDataSource1.InsertParameters["sales_tax"].DefaultValue = tax.ToString();
-        SqlDataSource1.InsertParameters["total"].DefaultValue = (subTotal + tax).ToString();
+        SqlDataSource1.InsertParameters["shipping_cost"].DefaultValue = sC.ToString();
+        SqlDataSource1.InsertParameters["sales_tax"].DefaultValue = t.ToString();
+        SqlDataSource1.InsertParameters["total"].DefaultValue = (sT + t).ToString();
         SqlDataSource1.InsertParameters["credit_card_number"].DefaultValue = lblInputCCNumberFromChkOutPage.Text.ToString();
         SqlDataSource1.InsertParameters["card_exp_month"].DefaultValue = lblCCExpMonth.Text.ToString();
-
         MembershipUser CurrentUser = Membership.GetUser();
         SqlDataSource1.InsertParameters["UserId"].DefaultValue = CurrentUser.ProviderUserKey.ToString();
 
