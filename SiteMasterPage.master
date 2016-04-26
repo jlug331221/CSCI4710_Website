@@ -28,14 +28,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/Default.aspx">East Coast Jeeps</a>
+                    <a class="navbar-brand" href="/group2/website/Default.aspx">East Coast Jeeps</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="/Contact.aspx">Contact Us</a></li>
+                        <li><a href="/group2/website/Contact.aspx">Contact Us</a></li>
                         <% if (Page.User.IsInRole("admin")) { %>
-                            <li><a href="/Maintenance/Maintenance.aspx">Admin Dashboard</a></li>
+                            <li><a href="/group2/website/Maintenance/Maintenance.aspx">Admin Dashboard</a></li>
                         <% } %>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -49,7 +49,7 @@
                         </li>
                         <li><asp:LoginStatus ID="LoginStatus1" runat="server" /></li>
                         <% if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated){ %>
-                            <li><a href="/MyAccount/MyAccount.aspx">My Account</a></li>
+                            <li><a href="/group2/website/MyAccount/MyAccount.aspx">My Account</a></li>
                         <% } else { %>
                             <li><a href="CreateUser.aspx">Sign Up</a></li>
                         <% } %>
