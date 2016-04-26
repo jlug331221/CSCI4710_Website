@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div id="page">
         <div id="main">
-            <h1>The Halloween Store - My Account</h1>
+            <h1>East Coast Jeeps - My Account</h1>
             <p>(Only authenticated users can access this page.)</p>
             <p>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="ChangePassword.aspx">Change Password</asp:HyperLink>
