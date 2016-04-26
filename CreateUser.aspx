@@ -3,10 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1">
+<head>
     <title>Register Now</title>
     <link href="Main.css" rel="stylesheet" type="text/css" />
 </head>
@@ -14,14 +14,17 @@
     <div id="page">
         <div id="main">
             <p>
-                <asp:CreateUserWizard ID="CreateUserWizard1" runat="server">
+                <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="1.1em" Width="882px">
+                    <ContinueButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" ForeColor="#284775" />
+                    <CreateUserButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" ForeColor="#284775" />
+                    <TitleTextStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <WizardSteps>
                         <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
                             <ContentTemplate>
                                 <table>
                                     <tr>
                                         <td align="center" colspan="2">
-                                            Sign Up for Your New Account</td>
+                                            Sign Up for Your New Account!</td>
                                     </tr>
                                     <tr>
                                         <td align="right">
@@ -130,6 +133,11 @@
                             </ContentTemplate>
                         </asp:CompleteWizardStep>
                     </WizardSteps>
+                    <HeaderStyle BackColor="#5D7B9D" BorderStyle="Solid" Font-Bold="True" Font-Size="0.9em" ForeColor="White" HorizontalAlign="Center" />
+                    <NavigationButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" ForeColor="#284775" />
+                    <SideBarButtonStyle BorderWidth="0px" Font-Names="Verdana" ForeColor="White" />
+                    <SideBarStyle BackColor="#5D7B9D" BorderWidth="0px" Font-Size="0.9em" VerticalAlign="Top" />
+                    <StepStyle BorderWidth="0px" />
                 </asp:CreateUserWizard>
             </p>
         </div>
