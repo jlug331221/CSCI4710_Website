@@ -4,8 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Chapter 19: Authentication</title>
-    <link href="../Main.css" rel="stylesheet" type="text/css" />
+    <title>East Coast Jeeps</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -29,7 +28,7 @@
                     NavigateUrl="UnderConstruction.aspx">Change Shipping Address</asp:HyperLink>
             </p>
             <p>
-                <asp:HyperLink ID="HyperLink5" runat="server" 
+                <asp:HyperLink ID="HyperLink5" runat="server"   
                     NavigateUrl="UnderConstruction.aspx">Change Preferences</asp:HyperLink>
             </p>
             <p>

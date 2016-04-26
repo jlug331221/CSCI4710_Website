@@ -10,6 +10,12 @@ public partial class ProductItem : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request.IsSecureConnection)
+        {
+            string url = Request.Url.ToString().Replace("https:", "http:");
+            Response.Redirect(url);
+        }
+
         Product p = getProduct();
         lblProductName.Text = p.ProductName.ToString();
         lblProductPrice.Text = p.UnitPrice.ToString("c");

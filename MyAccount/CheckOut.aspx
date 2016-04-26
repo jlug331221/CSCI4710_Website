@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <h1>Please Verfiy Check Out Information:</h1>
+                <h1>Please Verify Check Out Information:</h1>
             </div>
         </div>
 
@@ -238,7 +238,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputExpDate" class="col-md-3 control-label">Exp Date</label>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <asp:DropDownList class="form-control" 
                                         ID="ddlSelectExpMonth" name="CCMonth"
                                         runat="server">
@@ -271,13 +271,13 @@
                             </div>
                             <br />
                             <div class="form-group">
-                                <div class="col-xs-12 col-md-1 col-md-offset-2">
+                                <div class="col-xs-12 col-md-1 col-md-offset-1">
                                     <asp:Button ID="btnBackToShoppingCart" runat="server"
                                         class="btn btn-default back_to_shoppingcart_btn"
                                         Text="Back to Shopping Cart" PostBackUrl="~/Cart.aspx">
                                     </asp:Button>
                                 </div>
-                                <div class="col-xs-12 col-md-1 col-md-offset-3">
+                                <div class="col-xs-12 col-md-1 col-md-offset-4">
                                     <asp:Button ID="btnConfirmOrder" runat="server"
                                         class="btn btn-primary confirm_order_btn"
                                         Text="Confirm Order" PostBackUrl="~/MyAccount/OrderVerificationPage.aspx" 

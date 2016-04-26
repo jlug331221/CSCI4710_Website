@@ -13,6 +13,12 @@ public partial class Cart : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request.IsSecureConnection)
+        {
+            string url = Request.Url.ToString().Replace("https:", "http:");
+            Response.Redirect(url);
+        }
+
         cart = CartItemList.GetCart();
         ((Label)Master.FindControl("lblCartCount")).Text =
                     cart.totalItemCount().ToString();

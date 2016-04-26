@@ -10,6 +10,12 @@ public partial class ProductListing : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request.IsSecureConnection)
+        {
+            string url = Request.Url.ToString().Replace("https:", "http:");
+            Response.Redirect(url);
+        }
+
         lblShopName.Text = getShopName();
         lblCategoryName.Text = getCategoryName();
 

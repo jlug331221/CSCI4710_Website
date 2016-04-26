@@ -10,6 +10,12 @@ public partial class Contact : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request.IsSecureConnection)
+        {
+            string url = Request.Url.ToString().Replace("https:", "http:");
+            Response.Redirect(url);
+        }
+
         txtEmail.Text = "";
         txtFName.Text = "";
         txtLName.Text = "";
