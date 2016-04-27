@@ -35,8 +35,8 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/group2/website/Contact.aspx">Contact Us</a></li>
                         <% if (Page.User.IsInRole("admin")) { %>
-                            <!-- <li><a href="/group2/website/Maintenance/Maintenance.aspx">Admin Dashboard</a></li> -->
-                            <li><a href="/Maintenance/Maintenance.aspx">Admin Dashboard</a></li>
+                            <li><a href="/group2/website/Maintenance/Maintenance.aspx">Admin Dashboard</a></li> 
+                            <!-- <li><a href="/Maintenance/Maintenance.aspx">Admin Dashboard</a></li> -->
                         <% } %>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
