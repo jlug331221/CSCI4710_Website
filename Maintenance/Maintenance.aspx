@@ -24,6 +24,10 @@
                     NavigateUrl="ProductsMaintenance.aspx">Maintain Products</asp:HyperLink>
             </p>
             <p>
+                <asp:HyperLink ID="HyperLink4" runat="server" 
+                    NavigateUrl="Invoices_Line_Data.aspx">View Invoices and Line Information</asp:HyperLink>
+            </p>
+            <p>
                 <asp:LoginName ID="LoginName1" runat="server" 
                     FormatString="You are logged in as: {0}" /><br />
                 If this isn't your correct user name, please&nbsp;
