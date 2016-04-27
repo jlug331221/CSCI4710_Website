@@ -6,6 +6,26 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-11">
+                <h1>East Coast Jeeps Policy</h1>
+                <br />
+                <p>Shipping Policy: East Coast Jeep's standard shipping includes one of the following shipping methods:
+                    USPS, UPS Ground, and UPS Next Day Delivery<br />
+                    Orders placed by 1:00pm (EST) will be shipped the same day! <br /><br />
+                   Return Policy: East Coast Jeep's wants to ensur that our customers are completely satisfied with their products.
+                   If you are not completely satisfied with one of our products you may return it any time within 30 days of the date
+                    of Sale for a hassle-free refund of the amount paid for the product. Refunds do not include shipping costs. On exchange
+                    of defective products, Quadratec will pay for shipping on the outbound replacement product only. We only specify that the 
+                    product not be damaged, missing components or manufacturer's documentation. Special order or non-stocking items are specifically 
+                    exempted from this policy and will be assessed an appropriate re-stocking charge. Place your name and order number on the 
+                    package for efficient identification. Please note that we do not pay the shipping charges involved in returning goods.
+                </p>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12 col-md-offset-1">
                 <h1>Contact Us</h1>
                 <br />
