@@ -66,7 +66,7 @@ public partial class Maintenance_ProductsMaintenance : System.Web.UI.Page
     protected void DetailsView1_ItemDeleting(
         object sender, DetailsViewDeleteEventArgs e)
     {
-        e.Values["UnitPrice"]
-            = e.Values["UnitPrice"].ToString().Substring(1);
+        e.Values["price"]
+            = e.Values["price"].ToString().Substring(1);
     }
 }

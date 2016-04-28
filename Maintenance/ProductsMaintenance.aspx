@@ -133,7 +133,7 @@
                     
                         <asp:TemplateField HeaderText="Brand:">
                             <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server"
+                            <asp:Label ID="Label33" runat="server"
                                 Text='<%# Bind("brand_id") %>'></asp:Label>
                             </ItemTemplate>
                             <EditItemTemplate>
@@ -211,7 +211,7 @@
 
                         <asp:TemplateField HeaderText="Weight:">
                             <ItemTemplate>
-                            <asp:Label ID="Label5" runat="server"
+                            <asp:Label ID="Label55" runat="server"
                                 Text='<%# Bind("weight") %>'></asp:Label>
                             </ItemTemplate>
                             <EditItemTemplate>
